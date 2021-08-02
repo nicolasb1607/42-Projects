@@ -1,0 +1,6 @@
+Credentials cache: API:6BD045DB-8DCF-49DE-910A-D93AFD4515DA
+        Principal: nburat-d@42.FR
+
+  Issued                Expires             Flags    Principal
+Aug  2 10:19:42 2021  Aug  9 10:19:42 2021  FPRIA  krbtgt/42.FR@42.FR
+Aug  2 10:19:43 2021  Aug  9 10:19:42 2021  FPA    HTTP/student-storage-2.42.fr@42.FR
