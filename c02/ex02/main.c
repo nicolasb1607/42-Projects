@@ -4,7 +4,7 @@ int ft_str_is_alpha(char *str);
 
 int main(void)
 {
-	char str[] = "qwerty";
+	char str[] = "";
 	int x;
 
 	x = ft_str_is_alpha(str);

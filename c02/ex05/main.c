@@ -4,7 +4,7 @@ int ft_str_is_uppercase(char *str);
 
 int main(void)
 {
-	char str[] = "ADaHHK";
+	char str[] = "ADHK";
 	int x;
 
 	x = ft_str_is_uppercase(str);
