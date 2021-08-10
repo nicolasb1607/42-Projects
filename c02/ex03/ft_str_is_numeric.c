@@ -1,4 +1,15 @@
-int ft_str_is_numeric(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/10 08:58:20 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/10 08:58:29 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+int	ft_str_is_numeric(char *str)
 {
 	int	i;
 
@@ -7,13 +18,11 @@ int ft_str_is_numeric(char *str)
 		return (1);
 	while (str[i])
 	{
-
-		if ( str[i] <  '0' || str[i] > '9')
+		if (str[i] < '0' || str[i] > '9')
 		{
 			return (0);
-		
 		}
-	i++;
+		i++;
 	}
 	return (1);
 }

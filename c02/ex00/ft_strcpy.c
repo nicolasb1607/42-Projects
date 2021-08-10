@@ -6,14 +6,14 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 16:47:00 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/09 15:48:15 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/10 08:48:31 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-char	 *ft_strcpy(char *dest, char *src)
+char	*ft_strcpy(char *dest, char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i] != '\0')
@@ -24,4 +24,3 @@ char	 *ft_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-
