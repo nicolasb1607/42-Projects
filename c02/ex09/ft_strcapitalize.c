@@ -9,9 +9,18 @@
 /*   Updated: 2021/08/10 09:14:28 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+int ft_is_alphabet(char c)
+{
+    if (c < 'A' || (c > 'Z' && c < 'a') || c > 'z')
+        return (0);
+ 
+    return (1);
+}
+
+
 int	ft_is_lowercase(char c)
 {
-	if (c <= 'z' && c > 'a')
+	if (c <= 'z' && c >= 'a')
 		return (1);
 	return (0);
 }
@@ -30,6 +39,18 @@ char	*ft_strcapitalize(char *str)
 	int	i;
 	int	x;
 	int	y;
+    
+    i = 0;
+    while(str[i])
+       {
+           if (ft_is_alphabet(str[i]) == 1)
+           {
+               if (ft_is_lowercase(str[i]) == 0)
+                   str[i] = str[i] + 32;
+           }
+
+           i++;
+       }
 
 	if (ft_is_lowercase(str[0]))
 		str[0] = str[0] - 32;
