@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 09:43:06 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/11 09:43:49 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/12 10:06:27 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strstr(char *str, char *to_find)
@@ -20,7 +20,7 @@ char	*ft_strstr(char *str, char *to_find)
 		return (str);
 	while (str[i])
 	{
-		j = 0;
+		k = 0;
 		p = i;
 		while (str[p] == to_find[k])
 		{
@@ -31,5 +31,5 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

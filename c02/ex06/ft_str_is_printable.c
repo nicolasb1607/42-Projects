@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 09:04:38 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/10 09:04:43 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/12 14:06:32 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_str_is_printable(char *str)
@@ -18,7 +18,7 @@ int	ft_str_is_printable(char *str)
 		return (1);
 	while (str[i])
 	{
-		if (str[i] < 33 || str[i] > 126)
+		if (str[i] < 32 || str[i] > 126)
 		{
 			return (0);
 		}

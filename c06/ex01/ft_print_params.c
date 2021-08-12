@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/11 09:35:12 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/12 09:34:54 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/08/12 16:30:32 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/12 16:30:36 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_strcmp(char *s1, char *s2)
+#include <unistd.h>
+
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	x;
 
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] && s2[i])
+	while (str[i])
+	{
+		write(1, &str[i], 1);
 		i++;
-	x = (unsigned char)s1[i] - (unsigned char)s2[i];
-	return (x);
+	}
+}
+
+int	main(int argc, char *argv[])
+{
+	argc = 1;
+	while (argv[argc])
+	{
+		ft_putstr(argv[argc]);
+		write(1, "\n", 1);
+		argc++;
+	}	
+	return (0);
 }

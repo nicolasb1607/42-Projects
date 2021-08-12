@@ -4,8 +4,8 @@ int ft_strcmp(char *s1, char *s2);
 
 int main(void)
 {
-	char s1[] = "Bonjour";
-	char s2[] = "Bonsoir";
+	char s1[] = "Bonj";
+	char s2[] = "Bon";
 	int x;
 
 	x  = ft_strcmp(s1, s2);

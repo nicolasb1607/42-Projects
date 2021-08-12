@@ -4,7 +4,7 @@ int ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int main(void)
 {
-	unsigned int n = 0;
+	unsigned int n = 5;
 	char s1[] = "Bonjour";
 	char s2[] = "Bonsoir";
 	int x;

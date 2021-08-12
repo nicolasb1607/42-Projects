@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 09:39:13 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/11 09:39:16 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/12 09:42:54 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strcat(char *dest, char *src)
@@ -24,6 +24,6 @@ char	*ft_strcat(char *dest, char *src)
 		j++;
 		i++;
 	}
-	dest[i + 1] = '\0';
+	dest[i] = '\0';
 	return (dest);
 }

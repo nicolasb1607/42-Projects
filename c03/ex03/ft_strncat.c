@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 09:41:50 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/11 09:41:54 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/12 09:54:23 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
@@ -26,11 +26,7 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 		j++;
 		i++;
 	}
-	if (j < nb)
-	{
-		dest[i + j] = '\0';
-		return (dest);
-	}
-	dest[i + nb] = '\0';
+	dest[i] = '\0';
 	return (dest);
+
 }
