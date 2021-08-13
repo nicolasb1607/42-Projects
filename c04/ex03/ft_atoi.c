@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 16:26:43 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/11 16:26:47 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/13 13:29:45 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_is_numeric(char c)
@@ -40,11 +40,9 @@ int	ft_atoi(char *str)
 			nb_minus++;
 		i++;
 	}
-	power = 0;
 	while (ft_is_numeric(str[i]) == 1)
 	{
 		final_int = final_int * 10 + str[i] - 48;
-		power++;
 		i++;
 	}
 	if (nb_minus % 2 == 0)
