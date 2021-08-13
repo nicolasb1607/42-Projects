@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 09:19:07 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/10 09:21:10 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/13 09:41:32 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -44,9 +44,9 @@ void	ft_putstr_non_printable(char *str)
 	while (str[i])
 	{
 		if (ft_is_printable(str[i]) == 0)
-			ft_print_hexa(str[i]);
+			ft_print_hexa((unsigned char)str[i]);
 		else
-			ft_putchar(str[i]);
+			ft_putchar((unsigned char)str[i]);
 		i++;
 	}	
 }
