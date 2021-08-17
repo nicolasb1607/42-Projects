@@ -1,102 +1,101 @@
-int	ft_length(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/16 10:38:22 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/17 12:12:31 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+int	ft_strlen(char *str)
 {
-	unsigned int	strlength;
+	int	length;
 
-	strlength = 0;
-	while (str[strlength])
-		strlength++;
-	return (strlength);
-}
-
-int	ft_is_numeric(char c)
-{
-	if (c >= '0' && c <= '9')
-		return (1);
-	return (0);
-}
-
-int	ft_is_wht_spc(char c)
-{
-	if (c == 32 || (c >= 9 && c <= 13))
-		return (1);
-	return (0);
+	length = 0;
+	while (str[length])
+		length++;
+	return (length);
 }
 
 int	ft_check_base(char *str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
-	if (ft_length(str) <= 1)
+	if (ft_strlen(str) <= 1)
 		return (0);
-	while(str[i] < ' ' || str[i] > '~' || str[i] == '+' || str[i] == '-' )
+	while (str[i])
 	{
-		return (0);
+		if (str[i] < ' ' || str[i] > '~' || str[i] == '+' || str[i] == '-' )
+			return (0);
 		i++;
 	}
 	i = 0;
 	while (str[i])
 	{
-		j = 0;
-		while (str[i] != str[i + j] && str[i + j])
+		j = i + 1;
+		while (str[i] != str[j] && str[j])
 			j++;
-		if (str[i] == str[i + j])
+		if (str[i] == str[j])
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-int	ft_atoi(char *str)
+int	ft_is_in_base(char c, char *base)
 {
-	unsigned int	i;
-	unsigned int	nb_minus;
-	int				final_int;
+	int	i;
 
 	i = 0;
-	nb_minus = 0;
-	while (ft_is_wht_spc(str[i]))
-		i++;
-	while (str[i] == '-' || str[i] == '+')
+	while (base[i])
 	{
-		if (str[i] == '-')
-			nb_minus++;
+		if (base[i] == c)
+			return (1);
 		i++;
 	}
-	while (ft_is_numeric(str[i]) == 1)
+	return (0);
+}
+
+int	ft_get_pos(char c, char *base)
+{
+	int	i;
+
+	i = 0;
+	while (base[i])
 	{
-		final_int = final_int * 10 + str[i] - 48;
+		if (base[i] == c)
+			return (i);
 		i++;
 	}
-	if (nb_minus % 2 == 0)
-		return (final_int);
-	return (final_int * -1);
+	return (i);
 }
 
 int	ft_atoi_base(char *str, char *base)
 {
-	unsigned int nb;
-	
-	nb  = ft_atoi(str);
-	if (ft_atoi(str) < 0)
-		nb = ft_atoi(str) * -1;
-	if (ft_atoi(str) >= 0 )
-		nb = ft_atoi(str);
-	if (nb > ft_length(base))
+	int	nb_minus;
+	int	nbr;
+	int	i;
+
+	i = 0;
+	nbr = 0;
+	nb_minus = 0;
+	if (ft_check_base(base) == 0)
+		return (0);
+	while (str[i])
 	{
-		ft_atoi_base(nb / ft_length(base), base);
-		nb = nb % ft_length(base);
+		if (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+			i++;
+		if (str[i] == '-' || str[i] == '+')
+			nb_minus++;
+		if (ft_is_in_base(str[i], base) == 1)
+			nbr = nbr * ft_strlen(base) + ft_get_pos(str[i], base);
+		i++;
 	}
-	if (nb < ft_length(base))
-		ft_putchar(base[nb]);
-}
-
-int main(void)
-{
-	char base[] = "0123456789ABCDEF";
-	char str[] = "42";
-
-	ft_atoi_base(str, base);
-	return (0);
+	if (nb_minus % 2 != 0)
+		nbr = nbr * (-1);
+	return (nbr);
 }

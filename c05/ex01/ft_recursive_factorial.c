@@ -1,40 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 10:29:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/16 19:09:53 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/08/16 14:13:58 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/16 14:14:04 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_recursive_factorial(int nb)
 {
-	write(1, &c, 1);
-}
+	int	resultat;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}	
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		nb = nb % 10;
-	}	
-	if (nb < 10)
-	{
-		ft_putchar(nb + '0');
-	}
+	resultat = nb;
+	if (nb == 0)
+		return (1);
+	else
+		return (resultat * ft_recursive_factorial(resultat - 1));
 }

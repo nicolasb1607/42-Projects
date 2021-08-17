@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/11 16:26:43 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/13 13:29:45 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/16 16:00:13 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_is_numeric(char c)
@@ -18,7 +18,7 @@ int	ft_is_numeric(char c)
 
 int	ft_is_wht_spc(char c)
 {
-	if (c == 32 || (c >= 9 && c <= 13))
+	if (c == ' ' || (c >= 9 && c <= 13))
 		return (1);
 	return (0);
 }
@@ -27,11 +27,11 @@ int	ft_atoi(char *str)
 {
 	unsigned int	i;
 	unsigned int	nb_minus;
-	int				power;
 	int				final_int;
 
 	i = 0;
 	nb_minus = 0;
+	final_int = 0;
 	while (ft_is_wht_spc(str[i]))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
@@ -42,7 +42,7 @@ int	ft_atoi(char *str)
 	}
 	while (ft_is_numeric(str[i]) == 1)
 	{
-		final_int = final_int * 10 + str[i] - 48;
+		final_int = final_int * 10 + str[i] - '0';
 		i++;
 	}
 	if (nb_minus % 2 == 0)

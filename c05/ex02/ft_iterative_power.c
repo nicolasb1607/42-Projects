@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/16 10:29:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/16 19:09:53 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/08/16 14:36:04 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/17 18:56:48 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
-
-void	ft_putchar(char c)
+int	ft_iterative_power(int nb, int power)
 {
-	write(1, &c, 1);
-}
+	int	i;
+	int	resultat;
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
+	i = 0 ;
+	resultat = 1;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	while (i < power)
 	{
-		write(1, "-2147483648", 11);
-		return ;
+		resultat = resultat * nb;
+		i++;
 	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = nb * -1;
-	}	
-	if (nb >= 10)
-	{
-		ft_putnbr(nb / 10);
-		nb = nb % 10;
-	}	
-	if (nb < 10)
-	{
-		ft_putchar(nb + '0');
-	}
+	return (resultat);
 }
