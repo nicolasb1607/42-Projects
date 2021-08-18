@@ -1,28 +1,63 @@
 #include <stdio.h>
 #include <stdlib.h>
+int	ft_strlen(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len])
+		len++;
+	return (len);
+}
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
+	char	*ptr_strs;
+	int		argv_strlen;
+	int 	i;
+	int 	j;
+	int		k;
+	int		sep_len;
 
-	char **ptr_strs;
-	
-	ptr_strs = (char *) malloc(size * sizeof (char)); 
-	
-
-		
+	i = 1;
+	j = 1;
+	k = 0;
+	argv_strlen = 0; 
+	sep_len = 0;
+	while (strs[i])
+	{
+		argv_strlen = argv_strlen + ft_strlen(strs[i]);
+		i++;
+	}
+	sep_len = ft_strlen(sep);
+	ptr_strs = malloc((argv_strlen + (size - 1) * sep_len) * sizeof (char));
+	while (j < size)
+	{
+		i = 0;	
+		while (i < ft_strlen(strs[j]))
+		{
+			ptr_strs[k] = strs[j][i];
+			i++;
+			k++;
+		}
+		i = 0;
+		while (i < sep_len && j < size -1)
+		{
+			ptr_strs[k] = sep[i];
+			k++;
+			i++;
+		}
+		j++;
+	}
+	return (ptr_strs);
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	int size = 18; //size represente la taille de strs
-	char str[0][0] = "Salut";// 5
-	char str[1][0] = "comment"; //7
-	char str[2][0] = "ca";// 2
-	char str[3][0] = "va"; // 2
-	char str[4][0] = "?"; // 1
-	char sep[] = '/';
+	char sep[] = "/";
+	char *ptr;
 
-	
-	ft_strjoin(size, &strs, &sep)
+	ptr = ft_strjoin(argc, argv, sep);
+	printf("%s", ptr);
 	return (0);
 }
