@@ -32,8 +32,6 @@ int	ft_is_prime(int nb)
 int	ft_find_next_prime(int nb)
 {
 	int	i;
-
-	i = nb + 1;
 	while (ft_is_prime(i) == 0)
 		i++;
 	return (i);
