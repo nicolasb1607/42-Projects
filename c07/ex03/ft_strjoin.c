@@ -11,20 +11,16 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
-int 	ft_strcat(int j, char **strs, char *dest, char *sep)
+void	ft_strcat(char *dest, char *src, int i)
 {
-	int	i;
-	int k; 	
-	
-	i = 0;
-	k = 0;
-	while (i < ft_strlen(strs[j]))
+	int	j;
+
+	j = 0;
+	while (src[j])
 	{
-		dest[*k] = strd[j][i];
-		i++;
-		k++;
+		dest[i] == src[j];
+		j++;
 	}
-	return (k);
 
 }
 char	*ft_strjoin(int size, char **strs, char *sep)
