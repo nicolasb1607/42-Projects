@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 int	ft_strlen(char *str)
 {
 	int	len;
@@ -10,6 +11,22 @@ int	ft_strlen(char *str)
 	return (len);
 }
 
+int 	ft_strcat(int j, char **strs, char *dest, char *sep)
+{
+	int	i;
+	int k; 	
+	
+	i = 0;
+	k = 0;
+	while (i < ft_strlen(strs[j]))
+	{
+		dest[*k] = strd[j][i];
+		i++;
+		k++;
+	}
+	return (k);
+
+}
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
 	char	*ptr_strs;
@@ -19,16 +36,13 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	int		k;
 	int		sep_len;
 
-	i = 1;
+	i = 0;
 	j = 1;
 	k = 0;
 	argv_strlen = 0; 
 	sep_len = 0;
-	while (strs[i])
-	{
+	while (strs[++i])
 		argv_strlen = argv_strlen + ft_strlen(strs[i]);
-		i++;
-	}
 	sep_len = ft_strlen(sep);
 	ptr_strs = malloc((argv_strlen + (size - 1) * sep_len) * sizeof (char));
 	while (j < size)

@@ -6,9 +6,10 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 19:32:35 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/17 19:42:16 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/19 14:14:41 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
 int	ft_sqrt(int nb)
 {
@@ -19,13 +20,17 @@ int	ft_sqrt(int nb)
 		return (0);
 	if (nb == 1)
 		return (1);
-	while ((square + 1000) * (square + 1000) < nb && square > 0)
-		square = square + 1000;
 	while (square * square <= nb && square <= 46340)
 	{
 		if (square * square == nb)
 			return (square);
 		square++;
 	}
+	return (0);
+}
+
+int main(void)
+{
+	printf("%d", ft_sqrt(2147395600));
 	return (0);
 }
