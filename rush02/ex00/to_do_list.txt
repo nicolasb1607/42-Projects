@@ -1,0 +1,20 @@
+// ft_lenght 
+// ft_atoi
+// make file
+//
+// Parsing dictionnaire 
+// 			- Mettre les cles et les valeurs dans un tableau double entree
+//
+// Creation tableu de separateurs a partir du tableau du dictionnaire
+//
+// Split du nombre par bloc de 3 unites  dans un tableau
+//
+//
+//
+//traitement du nombre  
+//			traitementdu bloc
+//					 - fonction lecture
+//					 - affichage 
+//			ajout separateur
+//			affichage
+//

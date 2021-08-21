@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 15:53:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/12 15:54:41 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/21 15:19:25 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -27,5 +27,6 @@ int	main(int argc, char *argv[])
 {
 	(void)argc;
 	ft_putstr(argv[0]);
+	write(1, "\n", 1);
 	return (0);
 }

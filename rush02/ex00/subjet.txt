@@ -1,0 +1,48 @@
+programme avec argument un nombre 
+
+==> ./a.out int_x
+
+argc <= 3 
+
+if argc == 2 --> convertir valeur en sa valeur ecrite 
+
+if argc == 3 ;
+		agrc[1] = dictionnaire pour convertir la valeur 
+		argc[2] = valeur a convertir
+		
+if ( valeur a convertir  != (unsigned int) ) ==> 'Error \n'
+
+
+if ( dictionnaire ne peut nous convertir la valeur ) ==> 'Error \n'
+
+
+
+A realiser :
+
+- ft_parsing_du_dictionnaire;
+		--> Erreur lors du parsing ==> 'Dict Error\n'    ||   free()  || return (0);
+		--> Impossible de convertir la valeurr ==> 'Dict Error\n" || free()  || return (0)
+
+- regle du dictionnaire :
+	[a number][0 to n spaces]:[0 to n spaces][n'importe quel caractere imprimable]\n
+
+- ft_atoi a refaire;
+
+- ft_trimmer espaces en debut et fin de chaine; 
+
+- ft_split
+
+
+
+
+
+CREER UN DICTIONNAIRE DE MOTS :
+	- 	fichier .txt dans le repertoire du projet;
+	- 	dico.c pour lire un dictionnaire;  (inclure <stdio.h> && <stdlib.h>)
+	- 	dico.h pour y inscrire les prototypes;
+	-	
+
+
+les cles dans les dictionnairessont des 'int' donc paaage oblige par 'ft_atoi'
+
+	

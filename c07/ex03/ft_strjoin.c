@@ -1,73 +1,44 @@
-#include <stdio.h>
 #include <stdlib.h>
 
 int	ft_strlen(char *str)
 {
-	int	len;
-
-	len = 0;
-	while (str[len])
-		len++;
-	return (len);
-}
-
-void	ft_strcat(char *dest, char *src, int i)
-{
-	int	j;
-
-	j = 0;
-	while (src[j])
-	{
-		dest[i] == src[j];
-		j++;
-	}
-
-}
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	char	*ptr_strs;
-	int		argv_strlen;
-	int 	i;
-	int 	j;
-	int		k;
-	int		sep_len;
+	int	i; 
 
 	i = 0;
-	j = 1;
-	k = 0;
-	argv_strlen = 0; 
-	sep_len = 0;
-	while (strs[++i])
-		argv_strlen = argv_strlen + ft_strlen(strs[i]);
-	sep_len = ft_strlen(sep);
-	ptr_strs = malloc((argv_strlen + (size - 1) * sep_len) * sizeof (char));
-	while (j < size)
-	{
-		i = 0;	
-		while (i < ft_strlen(strs[j]))
-		{
-			ptr_strs[k] = strs[j][i];
-			i++;
-			k++;
-		}
-		i = 0;
-		while (i < sep_len && j < size -1)
-		{
-			ptr_strs[k] = sep[i];
-			k++;
-			i++;
-		}
-		j++;
-	}
-	return (ptr_strs);
+	while (str[i])
+		i++;
+	return (i);
 }
 
-int main(int argc, char *argv[])
+int	ft_getlen(char **str, char *sep)
 {
-	char sep[] = "/";
-	char *ptr;
+	int	total_len;
+	int	i;
 
-	ptr = ft_strjoin(argc, argv, sep);
-	printf("%s", ptr);
+	i = 0;
+	total_len = 0;
+	while (str[i])
+	{
+		argv
+		i++;
+	}
+
+
+
+	return (total_len);
+}
+
+// fonction pour recuperer la taille totale des arguments du tableau et des separateurs inclus
+
+//creation d un tableau de la taille de la string concatenee
+
+//fonction de concatenation des elements du tableau
+
+//
+
+int main(void)
+{
+	
+
 	return (0);
 }
