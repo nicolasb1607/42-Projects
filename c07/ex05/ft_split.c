@@ -1,5 +1,5 @@
 #include <stdlib.h>
-// parcourir la chaine s1, si le charactere de separation est rencontre alors on incremente une valeur 
+
 // SAUF si le caractere de separation est rencontee successivement OU que la chaine commence par un separateur OU termine par un separateur
 //
 //
@@ -22,6 +22,39 @@ int	ft_strlen(char *str)
 
 }
 
+int	ft_is_separator(char c, char **charset)
+{
+	int	i;
+
+	i = 0;
+	while (charset[i])
+	{
+		if (c == charset[i])
+			return (1);
+	}
+	return (0);
+}
+
+int	ft_count(char *str)
+{
+	int	count_section;
+	int	i;
+
+	i = 0;
+	count_section = 0;
+	while(str[i])
+	{
+		while (ft_is_separator(str[i]) == 1)
+			i++;
+		if (ft_is_separator(str[i] == 0))
+		{
+			while (ft_is_separator(str[i]) == 0)
+			i++;
+		}
+		count_section++;
+	}
+	return (count_section);
+}
 char **ft_split(char *str, char *charset)
 {
 	int	str_len;
@@ -32,16 +65,12 @@ char **ft_split(char *str, char *charset)
 	str_len = ft_strlen(str);
 	charset_len = ft_strlen(charset);
 
-	while (
-
 
 }
 
 
 int main(int argc, char *argv[])
-{
-	
-	
+{	
 	ft_split(char *str, char *charset);
 	return(0);
 }
