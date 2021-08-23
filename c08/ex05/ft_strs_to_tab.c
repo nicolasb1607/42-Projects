@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strs_to_tab.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/23 17:28:00 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/23 17:30:49 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdlib.h>
 #include "ft_stock_str.h"
 
@@ -8,19 +19,19 @@ int	ft_strlen(char *str)
 	len = 0;
 	while (str[len])
 		len++;
-	return(len);
+	return (len);
 }
 
-char *ft_strdup(char *str)
+char	*ft_strdup(char *str)
 {
-	char *dup;
-	int len;
-	int	i;
+	char	*dup;
+	int		len;
+	int		i;
 
 	i = 0;
 	len = 0;
 	len = ft_strlen(str);
-	dup = malloc((len + 1) * sizeof(char));
+	dup = malloc((len + 1) * sizeof (char));
 	if (!dup)
 		return (NULL);
 	while (str[i])
@@ -31,13 +42,14 @@ char *ft_strdup(char *str)
 	dup[i] = '\0';
 	return (dup);
 }
-struct s_stock_str *ft_strs_to_tab(int ac, char **av)
+
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
 {
-	int	i;
-	t_stock_str *ptr_to_tab;
+	int			i;
+	t_stock_str	*ptr_to_tab;
 
 	i = 0;
-	ptr_to_tab = malloc((ac +1) * sizeof(t_stock_str));
+	ptr_to_tab = malloc((ac + 1) * sizeof (t_stock_str));
 	if (!ptr_to_tab)
 		return (NULL);
 	while (av[i])
