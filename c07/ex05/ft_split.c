@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_strlen_custom(char *str)
 {
 	int	len;
 
@@ -28,33 +28,8 @@ int	ft_word_count(char *str, char **charset)
 {	
 	int	i;
 	int	nb_word;
-
-	nb_word = 0;
-	i = 0;
-	if (ft_charset(str[i]) == 0)
-		{
-			nb_word++;
-			i++;
-		}
-	while (str[i])
-	{		
-		if (ft_charset(str[i], charset) == 0 && ft_charset(str[i - 1], charset) == 1)
-		{
-			nb_word++; 
-			i++;
-		}
-	}
-	return (nb_word);
-}
-
-int ft_getlenword(char *str)
-{
-	int	len; 
-
-	len = 0; 
-	while (ft_charset(str[len]) == 0)
-		i++;
-	return(len);
+	
+	while (ft_charset(str[i]) == 1
 }
 
 char **ft_split(char *str, char *charset)
@@ -71,12 +46,9 @@ char **ft_split(char *str, char *charset)
 		return (NULL);
 	while (i < nb_word + 1)
 	{
-		
-
+		ptr_tab[i] = &str
 		i++;
 	}
-
-
 }
 
 
