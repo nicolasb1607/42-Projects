@@ -1,20 +1,28 @@
-CC	= gcc
-CFLAGS	= -Wall -Wextra -Werror
-EXEC	= libft.a
-SRCS	=  src/ft_putchar.c src/ft_swap.c src/ft_putstr.c src/ft_strlen.c src/ft_strcmp.c
-INCLUDES = includes/ft.h
-OBJS	= ${SRCS:.c=.o}
+CC= gcc
+CFLAGS= -Wall -Wextra -Werror
+EXEC=libft.a
+SRCS= ./srcs/ft_putchar.c \
+	./srcs/ft_swap.c \
+	./srcs/ft_putstr.c \
+	./srcs/ft_strlen.c \
+	./srcs/ft_strcmp.c
+INCLUDES=includes/ft.h
+OBJS= ${SRCS:.c=.o}
 
-all	:
-			$(CC) -c $(CFLAGS) $(SRCS) -I $(INCLUDES)
-			mv ft*.o src/
-			ar -rcs $(EXEC) $(OBJS)
+
+all	:	${EXEC}
+
+${EXEC} : ${OBJS}
+		ar rcs ${EXEC} ${OBJS} 
+
+${OBJS}: ${SRCS} 
+		$(CC) $(CFLAGS) -c $< -o $@ -I ${INCLUDES}
 
 clean : 
-		rm  $(OBJS)
+	rm -f $(OBJS)
 
-fclean : clean
-		rm $(EXEC)
+fclean : clean 
+	rm -f $(EXEC)
 
 re : fclean all
 
