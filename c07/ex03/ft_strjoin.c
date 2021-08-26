@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 11:37:00 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/26 09:46:51 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/26 14:07:20 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
@@ -72,9 +72,9 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	char	*strconcat;
 	int		i;
 
-	if (size >= 2)
+	if (size >= 1)
 	{
-		i = 1;
+		i = 0;
 		strconcat = malloc(ft_getlen(strs, sep, size) * sizeof (char));
 		strconcat[0] = '\0';
 		while (i < size)
@@ -85,7 +85,7 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 			i++;
 		}
 	}
-	if (size == 1)
+	if (size == 0)
 	{
 		strconcat = malloc(1 * sizeof (char));
 		strconcat[0] = '\0';
