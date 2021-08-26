@@ -6,11 +6,10 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 11:37:00 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/22 17:21:59 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/26 09:46:51 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
-#include <stdio.h>
 
 int	ft_strlen(char *str)
 {
@@ -92,11 +91,4 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 		strconcat[0] = '\0';
 	}
 	return (strconcat);
-}
-
-int main(int argc, char *argv[])
-{
-	char sep[] = "yo";
-	printf("%s\n", ft_strjoin(argc, argv, sep));
-	return (0);
 }

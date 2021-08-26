@@ -1,125 +1,96 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/08/26 10:07:59 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/08/26 10:08:32 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdlib.h>
-#include <stdio.h>
-#include <unistd.h>
 
-int	is_separator(char c, char *charset)
+int	is_charset(char c, char *charset)
 {
 	int	i;
 
 	i = 0;
 	while (charset[i] != '\0')
 	{
-		//printf("charset : %d\n" , i);
 		if (c == charset[i])
-		{
-			//printf("TEMOIN\n");
 			return (1);
-		}
 		i++;
 	}
 	return (0);
 }
 
-int	ft_strlen_word(char *str,char *charset, int i)
+int	w_count(char *str, char *charset)
 {
-	int	len;
-
-	len = 0;
-	while (is_separator(str[i], charset) == 1)
-		i++;
-	while (str[i] && is_separator(str[i], charset) == 0)
-	{
-		i++;
-		len++;
-	}
-	return (len);
-}
-
-int	ft_word_count(char *str, char *charset)
-{	
 	int	i;
-	int	nb_word;
+	int	word;
 
-	nb_word = 0;
 	i = 0;
-	while (str[i] != '\0')
+	word = 0;
+	while (str[i])
 	{
-		if (is_separator(str[i], charset) == 0)
+		if (is_charset(str[i], charset) == 0)
 		{
-			if (is_separator(str[i - 1], charset) == 1 || i == 0)
-				nb_word++;
+			if (is_charset(str[i - 1], charset) == 1 || i == 0)
+				word++;
 		}
 		i++;
-	}	
-	return (nb_word);
+	}
+	return (word);
 }
 
-
-char **ft_split(char *str, char *charset)
+char	*get_string(char *str, char *charset)
 {
-	char	**ptr_tab;
-	int	i;
-	int	j;
-	int	k;
-	int	len_word;
+	int		i;
+	int		size;
+	char	*tosplit;
+
+	i = 0;
+	size = 0;
+	while (is_charset(str[i], charset) == 0 && str[i])
+	{
+		size++;
+		i++;
+	}
+	tosplit = malloc(sizeof(char) * (size + 1));
+	i = 0;
+	while (is_charset(str[i], charset) == 0 && str[i])
+	{
+		tosplit[i] = str[i];
+		i++;
+	}
+	tosplit[i] = '\0';
+	return (tosplit);
+}
+
+char	**ft_split(char *str, char *charset)
+{
+	char	**split;
+	int		j;
+	int		i;
+	int		word;
 
 	j = 0;
 	i = 0;
-	ptr_tab = malloc((ft_word_count(str, charset) + 1) * sizeof (char*));
-	if (!ptr_tab)
+	if (!str)
 		return (NULL);
-	while (i < ft_word_count(str, charset))
+	word = w_count(str, charset);
+	split = malloc(sizeof(char *) * (word + 1));
+	split[word] = NULL;
+	while (str[i])
 	{
-		while (is_separator(str[j], charset) == 1)
-			j++;
-		ptr_tab[i] = malloc((ft_strlen_word(str, charset, j) + 1) * sizeof(char));
-		len_word = ft_strlen_word(str,charset,j);
-		k = 0;
-	 	while (k < len_word)
+		if ((is_charset(str[i], charset) == 0)
+			&& (i == 0 || is_charset(str[i - 1], charset) == 1) && (j < word))
 		{
-			ptr_tab[i][k] = str[j];
-			k++;
+			split[j] = get_string(&str[i], charset);
 			j++;
-		}		
-		ptr_tab[i][k] = '\0';
+		}
 		i++;
 	}
-
- 	ptr_tab[i] = NULL;
-	return (ptr_tab);
-}
-
-/*
-int main(void)
-{	
-	int i;
-	char **ptr;
-	char str[] = "hello jaja";
-	char sep[] = " ";
-
-	i = 0;
-	ptr = ft_split(str, sep);
-	while (ptr[i])
-	{
-		printf("%s", ptr[i]);
-		i++;
-	}
-	return(0);
-}
-*/
-
-int	main(int ac, char **av)
-{
-	(void) ac;
-	int	i;
-	char	**split;
-
-	split = ft_split(av[1], av[2]);
-	i = 0;
-	while (i < ft_word_count(av[1], av[2]))
-	{
-		printf("%s\n", split[i]);
-		i++;
-	}
-	return (0);
+	return (split);
 }

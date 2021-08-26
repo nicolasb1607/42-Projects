@@ -6,7 +6,7 @@
 /*   By: nburat-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 09:14:55 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/08/18 09:19:04 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/08/26 09:17:46 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	*ft_range(int min, int max)
 	if (min >= max)
 		return (NULL);
 	len = max - min;
-	ptrn_int = (int *) malloc(len - 1 * sizeof(int));
+	ptrn_int = (int *) malloc((len - 1) * sizeof(int));
 	if (!ptrn_int)
 		return (NULL);
 	while (i < len)
