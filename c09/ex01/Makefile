@@ -17,7 +17,7 @@ SRCS= ./srcs/ft_putchar.c \
 	./srcs/ft_putstr.c \
 	./srcs/ft_strlen.c \
 	./srcs/ft_strcmp.c
-INCLUDES=includes/ft.h
+INCLUDES=ft.h
 OBJS= ${SRCS:.c=.o}
 
 
@@ -37,3 +37,4 @@ fclean : clean
 
 re : fclean all
 
+.PHONY : clean fclean re
