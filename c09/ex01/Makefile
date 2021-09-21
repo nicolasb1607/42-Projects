@@ -9,27 +9,27 @@
 #    Updated: 2021/08/26 11:38:25 by nburat-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-CC= gcc
-CFLAGS= -Wall -Wextra -Werror
-EXEC=libft.a
-SRCS= ./srcs/ft_putchar.c \
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+EXEC = libft.a
+SRCS = ./srcs/ft_putchar.c \
 	./srcs/ft_swap.c \
 	./srcs/ft_putstr.c \
 	./srcs/ft_strlen.c \
 	./srcs/ft_strcmp.c
-INCLUDES=ft.h
+INCLUDES = ft.h
 OBJS= ${SRCS:.c=.o}
 
+all :	${EXEC}
 
-all	:	${EXEC}
 
 ${EXEC} : ${OBJS}
-		ar rcs ${EXEC} ${OBJS} 
+	ar rcs ${EXEC} ${OBJS} 
 
-${OBJS}: ${SRCS} 
-		$(CC) $(CFLAGS) -c $< -o $@ -I ${INCLUDES}
+.o : .c
+	$(CC) $(CFLAGS) -c $< -o $@  -I $(INCLUDES)
 
-clean : 
+clean :
 	rm -f $(OBJS)
 
 fclean : clean 
