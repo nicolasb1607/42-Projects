@@ -29,32 +29,31 @@ void	ft_putnbr(int nb)
 	}
 }	
 
-int ft_double(int tab)
+int	ft_double(int tab)
 {
-	int dble;
+	int	dble;
 
-	dble = tab * 2; 
-	return(dble);
+	dble = tab * 2;
+	return (dble);
 }
 
-int	*ft_map(int *tab, int length, int(*f)(int))
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
-	int *tab_res;
-	int i; 
-	
-	i = 0; 
+	int	*tab_res;
+	int	i;
+
+	i = 0;
 	tab_res = malloc(sizeof(int) * length);
 	while (i < length)
 	{
 		tab_res[i] = f(tab[i]);
-		i++; 
+		i++;
 	}
-	return(tab_res);
+	return (tab_res);
 }
 
-int main()
+/*int main()
 {
-
 	int tab[5] = {0,1,2,3,4};
 	int *tab_res;
 	int length = 5;
@@ -62,5 +61,5 @@ int main()
 	tab_res = ft_map(tab, length, &ft_double);
 	for(int i = 0 ; i < length ; i++)
 		ft_putnbr(tab_res[i]); 
-	return(0);
-}
+	return (0);
+}*/
