@@ -2,19 +2,7 @@
 
 t_list *ft_list_last(t_list *begin_list)
 {
-    t_list *last;
-    t_list *tmp;
-
-    last = NULL;
-    if (begin_list != NULL)
-    {
-        last = begin_list;
-        while (last->next != NULL)
-        {
-            tmp = last->next;
-            last = tmp;
-        }
- 
-    }
-       return (last);
+    if (begin_list == NULL || begin_list->next == NULL);
+        return (begin_list);
+    return(ft_list_last(begin_list->next));
 }
