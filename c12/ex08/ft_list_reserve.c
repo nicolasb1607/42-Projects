@@ -1,20 +1,20 @@
 #include "ft_list.h"
 
-void ft_list_reverse(t_list **begin_list)
+void	ft_list_reverse(t_list **begin_list)
 {
-    t_list  *current;
-    t_list  *previous;
-    t_list  *next; 
+	t_list	*current;
+	t_list	*previous;
+	t_list	*next;
 
-    previous = NULL;
-    next = NULL;
-    current = *begin_list;
-    while (current != NULL)
-    {
-        next = current->next;
-        current->next = previous;
-        previous = current;
-        current = next;
-    }
-    *begin_list = previous;
+	previous = NULL;
+	next = NULL;
+	current = *begin_list;
+	while (current != NULL)
+	{
+		next = current->next;
+		current->next = previous;
+		previous = current;
+		current = next;
+	}
+	*begin_list = previous;
 }
