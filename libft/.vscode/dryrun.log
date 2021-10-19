@@ -1,6 +1,28 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/nicolas/Documents/github/42_projects/libft'
-make: Leaving directory '/home/nicolas/Documents/github/42_projects/libft'
+gcc -Wall -Wextra -Werror   -c -o bzero.o bzero.c
+gcc -Wall -Wextra -Werror   -c -o calloc.o calloc.c
+gcc -Wall -Wextra -Werror   -c -o isalnum.o isalnum.c
+gcc -Wall -Wextra -Werror   -c -o isalpha.o isalpha.c
+gcc -Wall -Wextra -Werror   -c -o isascii.o isascii.c
+gcc -Wall -Wextra -Werror   -c -o isdigit.o isdigit.c
+gcc -Wall -Wextra -Werror   -c -o isprint.o isprint.c
+gcc -Wall -Wextra -Werror   -c -o memchr.o memchr.c
+gcc -Wall -Wextra -Werror   -c -o memcmp.o memcmp.c
+gcc -Wall -Wextra -Werror   -c -o memcpy.o memcpy.c
+gcc -Wall -Wextra -Werror   -c -o memset.o memset.c
+gcc -Wall -Wextra -Werror   -c -o strchr.o strchr.c
+gcc -Wall -Wextra -Werror   -c -o strdup.o strdup.c
+gcc -Wall -Wextra -Werror   -c -o strlcat.o strlcat.c
  
-make: *** No targets.  Stop.
+gcc -Wall -Wextra -Werror   -c -o strlcpy.o strlcpy.c
+gcc -Wall -Wextra -Werror   -c -o strlen.o strlen.c
+gcc -Wall -Wextra -Werror   -c -o strncmp.o strncmp.c
+gcc -Wall -Wextra -Werror   -c -o strnstr.o strnstr.c
+gcc -Wall -Wextra -Werror   -c -o strrchr.o strrchr.c
+gcc -Wall -Wextra -Werror   -c -o tolower.o tolower.c
+ 
+gcc -Wall -Wextra -Werror   -c -o toupper.o toupper.c
+ar rcs libft.a ./atoi.o ./bzero.o ./calloc.o ./isalnum.o ./isalpha.o ./isascii.o ./isdigit.o ./isprint.o ./memchr.o ./memcmp.o ./memcpy.o ./memset.o ./strchr.o ./strdup.o ./strlcat.o ./strlcpy.o ./strlen.o ./strncmp.o ./strnstr.o ./strrchr.o ./tolower.o ./toupper.o
+make: Leaving directory '/home/nicolas/Documents/github/42_projects/libft'
  
