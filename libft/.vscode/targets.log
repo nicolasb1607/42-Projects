@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'bzero.o', needed by 'libft.a'.  Stop.
+make: *** No rule to make target 'ft_atoi.o', needed by 'libft.a'.  Stop.
  
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
@@ -8,7 +8,7 @@ make: *** No rule to make target 'bzero.o', needed by 'libft.a'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Oct 19 13:58:32 2021
+# Make data base, printed on Mon Oct 25 12:32:43 2021
 
 # Variables
 
@@ -23,7 +23,7 @@ SSH_AGENT_LAUNCHER = gnome-keyring
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f04dbe79-106a-4d0d-9fb9-c29c24215345.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-8cace24b-90b8-4e79-b85c-96915d8dc516.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -63,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/c13f1abb110fc756f
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.JFVEB1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.B2W4B1
 # default
 .LOADED := 
 # default
@@ -77,7 +77,7 @@ VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # makefile (from 'Makefile', line 4)
-SRCS = ./atoi.c ./bzero.c ./calloc.c ./isalnum.c ./isalpha.c ./isascii.c ./isdigit.c ./isprint.c ./memchr.c ./memcmp.c ./memcpy.c ./memset.c ./strchr.c ./strdup.c ./strlcat.c ./strlcpy.c ./strlen.c ./strncmp.c ./strnstr.c ./strrchr.c ./tolower.c ./toupper.c
+SRCS = ./ft_atoi.c ./ft_bzero.c ./ft_calloc.c ./ft_isalnum.c ./ft_isalpha.c ./ft_isascii.c ./ft_isdigit.c ./ft_isprint.c ./ft_memchr.c ./ft_memcmp.c ./ft_memcpy.c ./ft_memset.c ./ft_strchr.c ./ft_strdup.c ./ft_strlcat.c ./ft_strlcpy.c ./ft_strlen.c ./ft_strncmp.c ./ft_strnstr.c ./ft_strrchr.c ./ft_tolower.c ./ft_toupper.c ./ft_substr.c ./ft_strjoin.c
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -103,15 +103,15 @@ ZSH = /home/nicolas/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 7255
+VSCODE_PID = 27722
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
-# makefile (from 'Makefile', line 26)
+# makefile (from 'Makefile', line 28)
 INCLUDES = libft.h
 # environment
-SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/1878,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/1878
+SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/1873,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/1873
 # automatic
 *F = $(notdir $*)
 # environment
@@ -127,9 +127,8 @@ VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupp
 # environment
 BREAKPAD_DUMP_LOCATION = /home/nicolas/.config/Code/exthost Crash Reports
 # default
- 
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 27)
+# makefile (from 'Makefile', line 29)
 OBJS = ${SRCS:.c=.o}
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
@@ -158,7 +157,7 @@ LC_MONETARY = fr_FR.UTF-8
 # environment
 LC_TIME = fr_FR.UTF-8
 # environment
-INVOCATION_ID = e57105ad229e48b9b6223d7339cfd6f8
+INVOCATION_ID = 794e11720b004e7c925941df5919a583
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -190,7 +189,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1896
+SYSTEMD_EXEC_PID = 1892
 # environment
 DISPLAY = :0
 # environment
@@ -200,11 +199,11 @@ GTK_MODULES = gail:atk-bridge
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1763
+MANAGERPID = 1756
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 7255
+GIO_LAUNCHED_DESKTOP_FILE_PID = 27722
 # environment
 PAGER = less
 # environment
@@ -216,7 +215,7 @@ XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'Makefile', line 2)
 CFLAGS = -Wall -Wextra -Werror
 # environment
-JOURNAL_STREAM = 8:34357
+JOURNAL_STREAM = 8:29649
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -254,9 +253,9 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 
 # Directories
 
-# . (device 66309, inode 2234828): 31 files, no impossibilities.
+# . (device 66309, inode 2234828): 37 files, no impossibilities.
 
-# 31 files, no impossibilities in 1 directories.
+# 37 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -264,40 +263,39 @@ LC_IDENTIFICATION = fr_FR.UTF-8
 
 # Files
 
-libft.a: atoi.o bzero.o calloc.o isalnum.o isalpha.o isascii.o isdigit.o isprint.o memchr.o memcmp.o memcpy.o memset.o strchr.o strdup.o strlcat.o strlcpy.o strlen.o strncmp.o strnstr.o strrchr.o tolower.o toupper.o
+# Not a target:
+ft_isalpha.o:
 #  Implicit rule search has not been done.
- 
-#  Last modified 2021-10-19 13:29:40.25170462
+#  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 32):
+
+# Not a target:
+ft_strchr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_isprint.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+libft.a: ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memset.o ft_strchr.o ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_tolower.o ft_toupper.o ft_substr.o ft_strjoin.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 34):
 		ar rcs $(EXEC) $(OBJS)
 
 # Not a target:
-strdup.o:
+ft_toupper.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-memcmp.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-isascii.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-tolower.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-toupper.o:
+ft_isalnum.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -305,26 +303,27 @@ toupper.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-10-19 13:58:23.766580227
+ 
+#  Last modified 2021-10-20 11:51:31.358259285
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
-strlcat.o:
+ft_strlen.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-strnstr.o:
+ft_strnstr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-bzero.o:
-#  Implicit rule search has been done.
-#  File does not exist.
+ft_strdup.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 clean:
@@ -332,22 +331,26 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 40):
 	rm *.o
 
 # Not a target:
-memset.o:
+ft_memset.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 # Not a target:
-atoi.o:
-#  Implicit rule search has been done.
-#  Last modified 2021-10-19 13:58:29.610616484
-#  File has been updated.
-#  Successfully updated.
+ft_isascii.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_memcpy.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 re: fclean all
 #  Phony target (prerequisite of .PHONY).
@@ -356,25 +359,25 @@ re: fclean all
 #  File has not been updated.
 
 # Not a target:
-memchr.o:
+ft_bzero.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-isprint.o:
+ft_isdigit.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-strlcpy.o:
+ft_strjoin.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-strncmp.o:
+ft_strlcat.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -396,40 +399,33 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 43):
 	rm $(EXEC)
 
 # Not a target:
-isalnum.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
+ft_atoi.o:
+#  Implicit rule search has been done.
+#  File does not exist.
 #  File has not been updated.
 
 # Not a target:
-memcpy.o:
+ft_strlcpy.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-isdigit.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-isalpha.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
- 
 #  File has not been updated.
 
 .o: .c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 37):
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
+
+# Not a target:
+ft_calloc.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .c:
@@ -438,25 +434,25 @@ isalpha.o:
 #  File has not been updated.
 
 # Not a target:
-calloc.o:
+ft_memcmp.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-strlen.o:
+ft_substr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-strrchr.o:
+ft_strrchr.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-strchr.o:
+ft_strncmp.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -466,21 +462,32 @@ strchr.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+ft_tolower.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+ft_memchr.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=33/1024=3%, Rehash=0, Collisions=0/75=0%
+# Load=35/1024=3%, Rehash=0, Collisions=0/79=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 63 / storage = 556 B / avg = 8 B
-# current buf: size = 8162 B / used = 556 B / count = 63 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 73 / storage = 795 B / avg = 10 B
+# current buf: size = 8162 B / used = 795 B / count = 73 / avg = 10 B
 
-# strcache performance: lookups = 84 / hit rate = 25%
- 
+# strcache performance: lookups = 92 / hit rate = 20%
 # hash-table stats:
-# Load=63/8192=1%, Rehash=0, Collisions=0/84=0%
-# Finished Make data base on Tue Oct 19 13:58:32 2021
+# Load=73/8192=1%, Rehash=0, Collisions=0/92=0%
+# Finished Make data base on Mon Oct 25 12:32:43 2021
 
  
