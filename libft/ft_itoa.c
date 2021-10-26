@@ -1,46 +1,54 @@
-// #include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/26 14:21:50 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/10/26 15:49:54 by nburat-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static void ft_num_len(int n, int *size)
+#include "include/libft.h"
+
+static void	ft_int_len(int n, int *len)
 {
 	if (n < 0)
 	{
-		*size++;
+		*len = *len + 1;
 		n = n * -1;
 	}
 	if (n > 9)
-		ft_num_len(n/10 , &size);
-	else
-		*size++;
-}
-
-static char	*ft_reverse(char *itoa_array, int size)
-{
-	char	tmp; 
-	int		left;
-
-
-	if (size < 2)
-		return (itoa_array);
-	else
 	{
-		left = -1;
-		while (++left < --size)
-		{
-			tmp = itoa_array[left];
-			itoa_array[left] = itoa_array[size];
-			itoa_array[size] = tmp;
-		}
+		ft_int_len(n / 10, len);
+		n = n % 10;
 	}
-	return (itoa_array);
+	if (n <= 9)
+		*len = *len + 1;
 }
 
-static void ft_put_num_array(int n, char *itoa_array)
+static void	ft_fill_array(int n, char *itoa_array, int *pos)
 {
 	if (n < 0)
-		itoa_array = '-';
+	{
+		itoa_array[*pos] = '-';
+		*pos = *pos + 1;
+		n = n * -1;
+	}
+	if (n > 9)
+	{
+		ft_fill_array(n / 10, itoa_array, pos);
+		n = n % 10;
+	}
 	if (n <= 9)
-		ft_put_num_array(n / 10, &
+	{
+		itoa_array[*pos] = n + 48;
+		*pos = *pos + 1;
+	}
+	return ;
 }
+
 /* Alloue (avec malloc(3)) et retourne une chaine de
 caractères représentant l’integer reçu en argument.
 Les nombres négatifs doivent être gérés.
@@ -49,32 +57,27 @@ La chaine de caractères représentant l’integer.
 NULL si l’allocation échoue.
 
 #1. l’integer à convertir. */
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *itoa_num; 
-	int size;
-	int	i; 
+	int		len;
+	char	*itoa_array;
+	int		pos;
 
-	size = 0; 
-	if (n == -2147483648)
-		return("-2147483648");
-	else if (n == 0); 
-		return('0');
-	else
-		ft_num_len(n, &size);
-	itoa_num = malloc((size + 1) * sizeof(char));
-	if (!itoa_num)
-		return (NULL);
-
+	pos = 0;
+	len = 0;
+	ft_int_len(n, &len);
+	itoa_array = malloc((len + 1) * sizeof(char));
+	while (pos < len)
+		ft_fill_array(n, itoa_array, &pos);
+	itoa_array[len] = '\0';
+	return (itoa_array);
 }
 
-
+/*
 #include <stdio.h>
-
 int main()
 {
-	char *s = "Hello";
-
-	printf("%s\n", ft_reverse(s, 5));
-	return 0; 
-}
+	int a = 345914;
+	printf("%s\n", ft_itoa(a));
+	return 0;
+} */
