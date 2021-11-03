@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 13:42:15 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/28 14:59:56 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/10/28 17:31:13 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/10/30 14:31:36 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/libft.h"
 
-/* Écrit le caractère ’c’ sur le file descriptor
-donné
+/*Libère la mémoire de l’élément passé en argument
+en utilisant la fonction del puis avec free(3). La
+mémoire de next ne doit pas être free.
 
-#1. Le caractère à écrire.
-#2. Le file descriptor sur lequel écrire. */
-void	ft_putchar_fd(char c, int fd)
+#1. L’élement à free
+#2. L’adresse de la fonction permettant de
+supprimer le contenu de l’élement.*/
+void ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	write(fd, &c, 1);
+	if (lst != NULL && del != NULL)
+	{
+		(*del)(lst->content);
+		free(lst);
+	}
 }
-
-/*
-int main()
-{
-	int fd = 1; 
-	char c = 'a';
-	
-	ft_putchar_fd(c, fd);
-	return 0;
-} */

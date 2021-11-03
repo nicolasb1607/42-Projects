@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:40:27 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/26 20:39:06 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:36:32 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	int	i;
 
 	i = -1;
-	if (s != NULL || f != NULL)
+	if (s != NULL && f != NULL)
 		while (s[++i])
 			f(i, &s[i]);
 	return ;

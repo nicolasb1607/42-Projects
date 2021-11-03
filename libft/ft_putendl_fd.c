@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:46:24 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/25 13:46:25 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/10/28 15:09:16 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,15 @@ descriptor donné, suivie d’un retour à la ligne.
 
 #1. La chaine de caractères à écrire.
 #2. Le file descriptor sur lequel écrire. */
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
-	
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }
+
+/*
+int main()
+{
+	ft_putendl_fd("hello", 1);
+	return 0;
+} */

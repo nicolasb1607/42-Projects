@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/25 13:42:15 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/28 14:59:56 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/10/28 17:36:15 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/10/28 17:37:05 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include/libft.h"
 
-/* Écrit le caractère ’c’ sur le file descriptor
-donné
+/*Itère sur la list lst et applique la fonction f au
+contenu chaque élément.
 
-#1. Le caractère à écrire.
-#2. Le file descriptor sur lequel écrire. */
-void	ft_putchar_fd(char c, int fd)
+#1 L’adresse du pointeur vers un élément.
+#2. L’adresse de la fonction à appliquer.*/
+void ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	write(fd, &c, 1);
+
 }
-
-/*
-int main()
-{
-	int fd = 1; 
-	char c = 'a';
-	
-	ft_putchar_fd(c, fd);
-	return 0;
-} */

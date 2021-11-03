@@ -1,0 +1,6 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/nicolas/Documents/github/42_projects/c10/ex00'
+gcc -Wall -Wextra -Werror ./ft_putstr.c ./main.c -o ft_display_file -I ft.h
+gcc -Wall -Wextra -Werror ./ft_putstr.c ./main.c -o ft_display_file -I ft.h
+make: Leaving directory '/home/nicolas/Documents/github/42_projects/c10/ex00'
+ 

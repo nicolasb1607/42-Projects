@@ -30,15 +30,25 @@ SRCS = ./ft_atoi.c \
 	./ft_itoa.c \
 	./ft_striteri.c \
 	./ft_strmapi.c \
-	./ft_strcpy.c
+	./ft_strcpy.c \
+	./ft_putchar_fd.c \
+	./ft_putstr_fd.c \
+	./ft_putendl_fd.c \
+	./ft_putnbr_fd.c \
+
+BONUS = 
 
 INCLUDES = libft.h
-OBJS = ${SRCS:.c=.o}
+OBJS_SRCS = ${SRCS:.c=.o}
+OBJS_BONUS = ${BONUS:.c=.o}
 
 all : $(EXEC)
 
-$(EXEC) : $(OBJS)
-		ar rcs $(EXEC) $(OBJS)
+bonus : $(OBJS_BONUS)
+		ar rcs $(EXEC) $(OBJS_SRCS) $(OBJS_BONUS) 
+
+$(EXEC) : $(OBJS_SRCS)
+		ar rcs $(EXEC) $(OBJS_SRCS)
 
 .o : .c
 	$(CC) $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
