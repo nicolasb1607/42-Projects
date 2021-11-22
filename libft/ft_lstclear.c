@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:32:49 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/30 15:28:17 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/04 10:02:10 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,7 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 	while (*lst != NULL)
 	{
 		current = *lst;
-		*lst = *lst->next;
-		ft_lstdelone(current);
+		*lst = (*lst)->next;
+		ft_lstdelone(current, del); 
 	}
-}
-
-#include <stdio.h>
-
-int main()
-{
-	
-	return 0;
 }

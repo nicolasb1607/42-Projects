@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:37:29 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/28 19:47:04 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/04 15:01:43 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,10 @@ element si necessaire
 #2. L’adresse de la fonction à appliquer.*/
 t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	
+	if (lst == NULL || f == NULL)
+		return NULL;
+	while(lst != NULL)
+	{
+		
+	}
 }

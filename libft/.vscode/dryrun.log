@@ -26,7 +26,6 @@ gcc -Wall -Wextra -Werror   -c -o ft_substr.o ft_substr.c
 gcc -Wall -Wextra -Werror   -c -o ft_strjoin.o ft_strjoin.c
 gcc -Wall -Wextra -Werror   -c -o ft_strtrim.o ft_strtrim.c
 gcc -Wall -Wextra -Werror   -c -o ft_split.o ft_split.c
- 
 gcc -Wall -Wextra -Werror   -c -o ft_itoa.o ft_itoa.c
 gcc -Wall -Wextra -Werror   -c -o ft_striteri.o ft_striteri.c
 gcc -Wall -Wextra -Werror   -c -o ft_strmapi.o ft_strmapi.c

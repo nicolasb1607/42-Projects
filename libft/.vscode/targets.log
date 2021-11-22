@@ -8,7 +8,7 @@ make: *** No rule to make target 'ft_atoi.o', needed by 'libft.a'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Oct 30 14:46:26 2021
+# Make data base, printed on Thu Nov  4 09:59:34 2021
 
 # Variables
 
@@ -25,7 +25,7 @@ SNAP_INSTANCE_KEY =
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7d2544ba-1ca2-472c-9d9d-d91803c9e60d.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-dd0ca882-90fe-450f-9d96-afdcea5f8e2a.sock
 # environment
 LC_NAME = fr_FR.UTF-8
 # environment
@@ -69,7 +69,7 @@ VSCODE_CODE_CACHE_PATH = /home/nicolas/.config/Code/CachedData/6cba118ac49a1b883
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.9C1SB1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.TT7LC1
 # default
 .LOADED := 
 # default
@@ -113,7 +113,7 @@ ZSH = /home/nicolas/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 3073
+VSCODE_PID = 6392
 # environment
 XDG_SESSION_TYPE = wayland
 # automatic
@@ -123,7 +123,7 @@ BAMF_DESKTOP_FILE_HINT = /var/lib/snapd/desktop/applications/code_code.desktop
 # makefile (from 'Makefile', line 41)
 INCLUDES = libft.h
 # environment
-SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/1992,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/1992
+SESSION_MANAGER = local/nicolas-XPS-15-9500:@/tmp/.ICE-unix/2267,unix/nicolas-XPS-15-9500:/tmp/.ICE-unix/2267
 # automatic
 *F = $(notdir $*)
 # environment
@@ -173,7 +173,7 @@ LC_TIME = fr_FR.UTF-8
 # environment
 SNAP = /snap/code/78
 # environment
-INVOCATION_ID = 0d0174e42189416595a79976ef16f35f
+INVOCATION_ID = bea4f78593fb41518cd9ff2774eb4ec4
 # environment
 SNAP_REVISION = 78
 # environment
@@ -213,7 +213,7 @@ SNAP_ARCH = amd64
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 2010
+SYSTEMD_EXEC_PID = 2285
 # environment
 DISPLAY = :0
 # environment
@@ -229,11 +229,11 @@ SNAP_DATA = /var/snap/code/78
 # environment
 SNAP_CONTEXT = CEZt7BCZrKMVXecjmrxbDPMiQffLKbiX-_bOEGc96lgjms7V65r5
 # environment
-MANAGERPID = 1874
+MANAGERPID = 2150
 # environment
 LC_MEASUREMENT = fr_FR.UTF-8
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 3023
+GIO_LAUNCHED_DESKTOP_FILE_PID = 6354
 # environment
 PAGER = less
 # environment
@@ -247,7 +247,7 @@ CFLAGS = -Wall -Wextra -Werror
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/nicolas/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-JOURNAL_STREAM = 8:36918
+JOURNAL_STREAM = 8:32233
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -284,6 +284,7 @@ SNAP_COMMON = /var/snap/code/common
 CC = gcc
 # makefile (from 'Makefile', line 43)
 OBJS_BONUS = ${BONUS:.c=.o}
+ 
 # environment
 SNAP_USER_DATA = /home/nicolas/snap/code/78
 # environment
@@ -294,7 +295,6 @@ GDMSESSION = ubuntu
 LC_IDENTIFICATION = fr_FR.UTF-8
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
- 
 # variable set hash-table stats:
 # Load=141/1024=14%, Rehash=0, Collisions=11/177=6%
 
@@ -304,9 +304,9 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 
 # Directories
 
-# . (device 66309, inode 2234828): 54 files, no impossibilities.
+# . (device 66309, inode 2234828): 50 files, no impossibilities.
 
-# 54 files, no impossibilities in 1 directories.
+# 50 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -573,8 +573,8 @@ ft_putchar_fd.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
+ 
 .PHONY: clean fclean re
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -600,12 +600,12 @@ ft_memchr.o:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 101 / storage = 1168 B / avg = 11 B
-# current buf: size = 8162 B / used = 1168 B / count = 101 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 97 / storage = 1144 B / avg = 11 B
+# current buf: size = 8162 B / used = 1144 B / count = 97 / avg = 11 B
 
-# strcache performance: lookups = 121 / hit rate = 16%
+# strcache performance: lookups = 117 / hit rate = 17%
 # hash-table stats:
-# Load=101/8192=1%, Rehash=0, Collisions=0/121=0%
-# Finished Make data base on Sat Oct 30 14:46:26 2021
+# Load=97/8192=1%, Rehash=0, Collisions=0/117=0%
+# Finished Make data base on Thu Nov  4 09:59:34 2021
 
  
