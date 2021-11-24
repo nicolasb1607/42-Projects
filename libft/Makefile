@@ -47,7 +47,7 @@ BONUS = ./ft_lstnew.c \
 	./ft_lstclear.c \
 	./ft_lstiter.c \
 
-INCLUDES = include/
+INCLUDES = ./
 OBJS_SRCS = ${SRCS:.c=.o}
 OBJS_BONUS = ${BONUS:.c=.o}
 
@@ -63,10 +63,10 @@ $(EXEC) : $(OBJS_SRCS)
 		ar rcs $(EXEC) $(OBJS_SRCS)
 
 clean :
-	rm *.o
+	rm $(OBJS_SRCS) $(OBJS_BONUS)
 
 fclean : clean
-	rm $(EXEC)
+	rm -f $(EXEC)
 
 re : fclean all
 

@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:31:13 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/30 14:31:36 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:01 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /*Libère la mémoire de l’élément passé en argument
 en utilisant la fonction del puis avec free(3). La

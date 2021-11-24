@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:37:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/23 13:53:44 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:39:11 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

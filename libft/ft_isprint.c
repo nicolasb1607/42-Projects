@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:16 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/20 18:18:57 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:39:40 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

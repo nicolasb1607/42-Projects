@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:27:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/29 10:13:09 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:09 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /*Renvoie le dernier élément de la liste.
 

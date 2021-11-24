@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:57 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/20 18:46:25 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:41:43 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 int	ft_strlen(const char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:42:15 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/28 14:59:56 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:50 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /* Écrit le caractère ’c’ sur le file descriptor
 donné

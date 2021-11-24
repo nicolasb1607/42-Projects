@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:16 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/25 13:06:06 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:42:07 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /* Alloue (avec malloc(3)) et retourne une chaine de
 caractères issue de la chaine ’s’.

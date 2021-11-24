@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:32:49 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/04 10:02:10 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:39:55 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /*Supprime et libère la mémoire de l’élément passé en
 paramètre, et de tous les élements qui suivent, à

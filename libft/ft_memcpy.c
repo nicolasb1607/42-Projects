@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:28 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/23 13:10:18 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:34 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 void 	*ft_memcpy(void *dest, const void *restrict src, size_t n)
 {

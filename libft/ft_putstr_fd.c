@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:43:45 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/28 15:03:49 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:41:03 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /* Écrit la chaine de caractères ’s’ sur le file
 descriptor donné.

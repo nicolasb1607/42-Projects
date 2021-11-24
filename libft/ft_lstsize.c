@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:25:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/29 10:02:09 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:21 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /*Compte le nombre d’éléments de la liste.
 

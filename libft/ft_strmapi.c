@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:49:20 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/26 18:06:59 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:41:47 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /* Applique la fonction ’f’ à chaque caractère de la
 chaine de caractères passée en argument pour créer

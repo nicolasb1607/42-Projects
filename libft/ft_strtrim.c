@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:36:29 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/25 13:08:32 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:42:03 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 static int	ft_contain_char(char s, char const *set)
 {

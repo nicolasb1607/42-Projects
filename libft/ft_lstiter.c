@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:36:15 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/23 17:34:44 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:05 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /*Itère sur la list lst et applique la fonction f au
 contenu chaque élément.

@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:37:46 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/20 17:49:25 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:39:05 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 int	ft_atoi(const char *nptr)
 {
@@ -36,15 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (num * neg);
 }
-
-/*
-
-#include <stdio.h>
-
-int main(int ac, char **av)
-{
-    if (ac == 2)
-        printf("Num apres atoi : %d\n", ft_atoi(av[1]));
-    return (0);
-}
-*/

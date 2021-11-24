@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 16:15:42 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/10/28 16:49:19 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 16:40:18 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/libft.h"
+#include "libft.h"
 
 /* Alloue (avec malloc(3)) et renvoie un nouvel
 élément. la variable content est initialisée à
