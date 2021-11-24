@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:47 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:31 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:06:25 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ l’allocation échoue.
 
 #1. La chaine de caractères préfixe.
 #2. La chaine de caractères suffixe. */
-char	*ft_strjoin(char const *s1, char const *s2)
+char *ft_strjoin(char const *s1, char const *s2)
 {
-	int		catlen;
-	char	*strcat;
-	int		i;
-	int		j;
+	int catlen;
+	char *strcat;
+	int i;
+	int j;
 
 	i = -1;
 	j = -1;
@@ -32,22 +32,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	strcat = malloc((catlen + 1) * sizeof(char));
 	if (!strcat)
 		return (NULL);
-	while (s1[++i])
-		strcat[++j] = s1[i];
+	if (s1 != NULL)
+	{
+		while (s1[++i])
+			strcat[++j] = s1[i];
+	}
 	i = -1;
-	while (s2[++i])
+	if (s2 != NULL)
+	{
+	while (s2[++i] && s2 != NULL)
 		strcat[++j] = s2[i];
+	}
 	strcat[++j] = '\0';
+
 	return (strcat);
 }
-
-/*
-#include <stdio.h>
-
-int main(int ac, char **av)
-{
-    if (ac == 3)
-        printf("concatened string : %s\n", ft_strjoin(av[1], av[2]));
-    return 0;
-}
-*/

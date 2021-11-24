@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:16 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:42:07 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:09:22 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 
 	i = 0;
+	if (len <= 0 || s == NULL)
+		return (NULL);
 	substr = malloc((len + 1) * sizeof(char));
 	if (!substr)
 		return (NULL);
@@ -42,17 +44,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-/* 
-#include <stdio.h>
-
-int main()
-{
-    char *s = "hello les amis comment ca va ?";
-    char *substr;
-
-    substr = ft_substr(s, -5, 50);
-    printf("la substr est : %s", substr);
-    return 0;
-}
-*/

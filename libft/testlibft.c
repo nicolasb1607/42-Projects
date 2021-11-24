@@ -1,4 +1,4 @@
-#include "include/libft.h"
+#include "libft.h"
 #include <stdio.h>
 #include <ctype.h>
 #include <strings.h>
@@ -206,10 +206,27 @@ int main()
 
 	printf("------------------------------------------\n");
 
-	
+	char *s = "You got passed the substr test";
+
+    printf("ft_substr : %s \n", ft_substr(s, 0, 50));
+	printf("ft_substr : %s \n", ft_substr(s, 10, 50));
+	printf("ft_substr : %s \n", ft_substr(NULL, 10, 50));
 
 	printf("------------------------------------------\n");
+
+	char *st1 = "You ve got those ";
+	char *st2 = "strings concatenated";
+	char *st3 = NULL;
+
+	printf("strjoin : %s \n", ft_strjoin(st1, st2));
+	printf("strjoin : %s \n", ft_strjoin(st3, st2));
+	printf("strjoin : %s \n", ft_strjoin(st1, st3));
+	printf("strjoin : %s \n", ft_strjoin(NULL, NULL));
+	
 	printf("------------------------------------------\n");
+
+		
+
 	printf("------------------------------------------\n");
 	printf("------------------------------------------\n");
 	printf("------------------------------------------\n");

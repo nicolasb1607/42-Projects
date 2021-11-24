@@ -6,18 +6,23 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:57 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:43 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:55:22 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(const char *s)
+int ft_strlen(const char *s)
 {
-	int	len;
+	int len;
 
 	len = 0;
-	while (s[len])
-		len++;
-	return (len);
+	if (s == NULL)
+		return (0);
+	else
+	{
+		while (s[len])
+			len++;
+		return (len);
+	}
 }

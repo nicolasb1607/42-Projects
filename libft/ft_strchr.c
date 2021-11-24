@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:39 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:13 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/24 17:11:29 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,3 @@ char	*ft_strchr(const char *s, int c)
 	else
 		return (NULL);
 }
-
-/*
-#include <stdio.h>
-
-int main()
-{
-	char *s = "hello";
-	char c = 'o';
-
-	printf("l'adresse de la premiere %c occurence est : %s\n", c, ft_strchr(s, c));
-	return (0);
-}*/

@@ -63,7 +63,7 @@ $(EXEC) : $(OBJS_SRCS)
 		ar rcs $(EXEC) $(OBJS_SRCS)
 
 clean :
-	rm $(OBJS_SRCS) $(OBJS_BONUS)
+	rm -f $(OBJS_SRCS) $(OBJS_BONUS)
 
 fclean : clean
 	rm -f $(EXEC)
