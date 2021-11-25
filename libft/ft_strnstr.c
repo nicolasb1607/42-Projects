@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:05 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:55 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 17:03:45 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ nated string little in the string big, where not more than len characters
 are searched.  Characters that appear after a Null-terminated character are not
 searched.  Since the strnstr() function is a FreeBSD specific API, it
 should only be used when portability is not a concern.
+
 If little is an empty string, big is returned; if little occurs nowhere
 in big, NULL is returned; otherwise a pointer to the first character of 
 the first occurrence of little is returned. 
@@ -28,11 +29,11 @@ char	*ft_strnstr(const char *to_search, const char *to_find, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (to_find == NULL)
-		return ((char *)to_search);
+	if (!to_find)
+		return ((char *) to_search);
 	if (len == 0)
 		return (NULL);
-	while (to_search[i] != '\0' && i < len)
+	while (to_search[i] && i < len)
 	{
 		j = 0;
 		while (to_search[i + j] == to_find[j] && (i + j) < len)

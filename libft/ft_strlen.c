@@ -6,15 +6,15 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:57 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 17:55:22 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:25:27 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
-	int len;
+	int	len;
 
 	len = 0;
 	if (s == NULL)

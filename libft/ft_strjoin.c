@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:47 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 18:06:25 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:27:43 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ l’allocation échoue.
 
 #1. La chaine de caractères préfixe.
 #2. La chaine de caractères suffixe. */
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int catlen;
-	char *strcat;
-	int i;
-	int j;
+	int		catlen;
+	char	*strcat;
+	int		i;
+	int		j;
 
 	i = -1;
 	j = -1;
@@ -33,17 +33,14 @@ char *ft_strjoin(char const *s1, char const *s2)
 	if (!strcat)
 		return (NULL);
 	if (s1 != NULL)
-	{
 		while (s1[++i])
 			strcat[++j] = s1[i];
-	}
 	i = -1;
 	if (s2 != NULL)
 	{
-	while (s2[++i] && s2 != NULL)
-		strcat[++j] = s2[i];
+		while (s2[++i] && s2 != NULL)
+			strcat[++j] = s2[i];
 	}
 	strcat[++j] = '\0';
-
 	return (strcat);
 }

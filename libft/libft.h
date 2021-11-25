@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:37:34 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 14:30:19 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:37:39 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *restrict src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 ssize_t ft_strlcpy(char *dst, const char *src, size_t size);
+int	ft_strlcat(char *dst, const char *src, size_t size);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 char	*ft_strchr(const char *s, int c);

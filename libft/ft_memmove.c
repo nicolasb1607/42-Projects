@@ -6,28 +6,29 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:32 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:40:42 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:23:04 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-static int is_higher_in_mem(void *dest, const void *src)
+static int	is_higher_in_mem(void *dest, const void *src)
 {
-	long int adddest = (long int) dest;
-	long int addsrc = (long int) src;
-	
+	long int	adddest;
+	long int	addsrc;
+
+	adddest = (long int)dest;
+	addsrc = (long int)src;
 	if (adddest > addsrc)
 		return (1);
 	return (0);
 }
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char *ptrdest;
-	char *ptrsrc;
-	size_t i;
+	char	*ptrdest;
+	char	*ptrsrc;
+	size_t	i;
 
 	i = 1;
 	ptrdest = (char *)dest;

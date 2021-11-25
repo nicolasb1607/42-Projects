@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:09 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:59 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 15:22:22 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,20 @@ char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	pos = NULL;
-	while (s[i])
+	if (!s)
+		return (NULL);
+	else if (c == '\0')
 	{
-		if (s[i] == c)
-			pos = (char *)&s[i];
-		i++;
+		while (s[i] != '\0')
+			i++;
+		pos = (char *)&s[i];
+	}
+	else
+	{
+		i = -1;
+		while (s[++i])
+			if (s[i] == c)
+				pos = (char *)&s[i];
 	}
 	return (pos);
 }
-
-/*
-#include <stdio.h>
-
-int main()
-{
-	char *s = "hello salut les amis de la sorbonne";
-	char c = 'l';
-
-	printf("l'adresse de la derniere %c occurence est : %s\n", c, ft_strrchr(s, c));
-	return (0);
-} */

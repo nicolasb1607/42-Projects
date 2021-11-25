@@ -6,6 +6,13 @@
 #include <bsd/string.h>
 
 
+char add(unsigned int plus,char c)
+{
+	c = c + 1;
+	return (c);
+}
+
+
 int main()
 {
 	printf("Test of LIBFT\n");
@@ -225,11 +232,43 @@ int main()
 	
 	printf("------------------------------------------\n");
 
-		
+	char *strofstrtrim = "qwertyasdfghqwertyuioplqwerty";
+	char *charset = "qwerty";
+
+	printf("res : %s\n", ft_strtrim(strofstrtrim, charset));	
+	printf("res : %s\n", ft_strtrim(NULL, charset));
+	printf("res : %s\n", ft_strtrim(strofstrtrim, NULL));
 
 	printf("------------------------------------------\n");
+
+	char *to_split = "this is the string to split";
+	char char_split = ' ';
+	char **splitted;
+
+	/*splitted = ft_split(to_split,char_split);
+	while (splitted)
+		printf("%s\n", *splitted++);
+
+	splitted = ft_split(to_split, 'z');
+	while (splitted)
+		printf("%s\n", *splitted++); 
+
+	splitted = ft_split(NULL, 'z');
+	while (splitted)
+		printf("%s\n", *splitted++); */
+
 	printf("------------------------------------------\n");
+
+	printf("itoa 10 : %s\n",ft_itoa(10));
+	printf("itoa -10 : %s\n",ft_itoa(-10));
+	printf("itoa -10 : %s\n",ft_itoa(0));
+
 	printf("------------------------------------------\n");
+
+	char *mapistr = "abcdef";
+
+	printf("ft_strmapi add +1 ,to each char : %s\n", ft_strmapi(mapistr, &add));
+
 	printf("------------------------------------------\n");
 	printf("------------------------------------------\n");
 	printf("------------------------------------------\n");

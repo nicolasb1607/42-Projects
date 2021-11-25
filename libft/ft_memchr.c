@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:20 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:40:26 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 13:25:10 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	ptrc = (unsigned char)c;
 	ptrs = (unsigned char *)s;
 	pos = 0;
-
 	if (n == 0)
 		return (NULL);
 	while (ptrs[pos] != ptrc && ptrs[pos] && n - 1 > 0)

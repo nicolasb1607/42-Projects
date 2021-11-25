@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 09:21:54 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:08 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/25 10:37:40 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = -1;
+	if (!s)
+		return (NULL);
 	to_split = malloc((ft_num_word(s, c) + 1) * sizeof(char *));
 	if (!to_split)
 		return (NULL);
@@ -88,23 +90,3 @@ char	**ft_split(char const *s, char c)
 	to_split[++j] = NULL;
 	return (to_split);
 }
-
-/*
-
-#include <stdio.h>
-
-int main(int ac, char **av)
-{
-	char **split_tab;
-	int i;
-
-	i = 0;
-	if (ac == 3)
-		split_tab = ft_split(av[1], av[2][0]);
-	while (i < 2)
-	{
-		printf("%s\n", split_tab[i]);
-		i++;
-	}
-	return (0);
-} */
