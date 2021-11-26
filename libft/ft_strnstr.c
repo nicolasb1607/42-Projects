@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:05 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 17:03:45 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 14:22:22 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_strnstr(const char *to_search, const char *to_find, size_t len)
 	size_t	j;
 
 	i = 0;
-	if (!to_find)
-		return ((char *) to_search);
+	if (ft_strlen(to_find) == 0)
+		return ((char *)&to_search[i]);
 	if (len == 0)
 		return (NULL);
 	while (to_search[i] && i < len)

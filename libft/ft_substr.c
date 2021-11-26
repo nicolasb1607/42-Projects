@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:16 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 17:47:37 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 15:59:09 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,26 @@ chaine ’s’.
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*substr;
-	size_t	i;
+	int		i;
 
-	i = -1;
-	if (!s || (unsigned int) ft_strlen(s) < start )
-		return(NULL);	
-	substr = malloc((len + 1) * sizeof(char));
-	if (!substr)
-		return (NULL);
-	while (s[++i] && i < len)
-		substr[i] = s[i + start];
+	i = 0;
+	if ((int)len > ft_strlen(&s[start]) - 1)
+	{
+		substr = malloc((ft_strlen(&s[start]) + 1) * sizeof(char));
+		if (!substr)
+			return (NULL);
+	}
+	else
+	{
+		substr = malloc((len + 1) * sizeof(char));
+		if (!substr)
+			return (NULL);
+	}
+	while (i < (int)len && s[start])
+	{
+		substr[i] = s[start + i];
+		i++;
+	}
 	substr[i] = '\0';
 	return (substr);
 }

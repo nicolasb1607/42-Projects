@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:21:50 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:39:44 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:41:27 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,17 +67,13 @@ char	*ft_itoa(int n)
 	len = 0;
 	ft_int_len(n, &len);
 	itoa_array = malloc((len + 1) * sizeof(char));
+	if (n == -2147483648)
+	{
+		itoa_array = "-2147483648";
+		return (itoa_array);
+	}
 	while (pos < len)
 		ft_fill_array(n, itoa_array, &pos);
 	itoa_array[len] = '\0';
 	return (itoa_array);
 }
-
-/*
-#include <stdio.h>
-int main()
-{
-	int a = 345914;
-	printf("%s\n", ft_itoa(a));
-	return 0;
-} */

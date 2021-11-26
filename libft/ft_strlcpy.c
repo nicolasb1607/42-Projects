@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:54 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 14:49:20 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 15:02:37 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ both src and dst must be NUL-terminated.
 
 The strlcpy() function copies up to size - 1 characters from the NUL-terminated
 string src to dst, NUL-terminating the result.*/
-ssize_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	long unsigned int	i;
 

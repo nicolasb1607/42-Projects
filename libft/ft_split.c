@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 09:21:54 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 10:37:40 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:15:17 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static char	*ft_get_string(char const *s, char sep)
 	char	*to_split;
 
 	i = -1;
+	size = 0;
 	while (s[++i] != sep && s[i])
 		size++;
 	to_split = malloc((size + 1) * sizeof(char));

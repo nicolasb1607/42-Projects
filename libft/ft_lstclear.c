@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:32:49 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:39:55 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/26 16:35:14 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,16 @@ Enfin, le pointeur initial doit être mis à NULL.
 #1. L’adresse du pointeur vers un élément.
 #2. L’adresse de la fonction permettant de
 supprimer le contenu d’un élément.*/
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list *current;
-
+	t_list	*current;
+	
+	current = NULL;
 	while (*lst != NULL)
 	{
 		current = *lst;
 		*lst = (*lst)->next;
-		ft_lstdelone(current, del); 
+		del(current->content);
+		free(current);
 	}
 }

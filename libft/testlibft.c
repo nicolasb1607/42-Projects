@@ -213,11 +213,12 @@ int main()
 
 	printf("------------------------------------------\n");
 
-	char *s = "You got passed the substr test";
+	/*char *s = "You got passed the substr test";
 
     printf("ft_substr : %s \n", ft_substr(s, 0, 50));
-	printf("ft_substr : %s \n", ft_substr(s, 10, 50));
-	printf("ft_substr : %s \n", ft_substr(NULL, 10, 50));
+	printf("ft_substr : %s \n", ft_substr(s, 60, 0));
+	printf("ft_substr : %s \n", ft_substr(s, 60, 50));
+	printf("ft_substr : %s \n", ft_substr(NULL, 10, 50));*/
 
 	printf("------------------------------------------\n");
 
@@ -241,14 +242,15 @@ int main()
 
 	printf("------------------------------------------\n");
 
-	char *to_split = "this is the string to split";
-	char char_split = ' ';
+	char *to_split = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
+	char char_split = 'i';
 	char **splitted;
 
-	/*splitted = ft_split(to_split,char_split);
+	splitted = ft_split(to_split,char_split);
 	while (splitted)
 		printf("%s\n", *splitted++);
 
+/*
 	splitted = ft_split(to_split, 'z');
 	while (splitted)
 		printf("%s\n", *splitted++); 
