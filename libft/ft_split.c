@@ -5,53 +5,73 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 09:21:54 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/26 16:15:17 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/11/27 16:59:52 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/11/28 17:53:06 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_num_word(char const *s, char sep)
+static int	nb_word(const char *s, char c)
 {
-	int	in_word;
+	int	nbword;
 	int	i;
-	int	num_word;
 
-	i = -1;
-	in_word = 0;
-	num_word = 0;
-	while (s[++i])
+	i = 0;
+	nbword = 0;
+	if (i == 0 && s[i] != c)
 	{
-		if (in_word == 0 && s[i] != sep)
-		{
-			in_word = 1;
-			num_word++;
-		}
-		else if (s[i] == sep && in_word == 1)
-			in_word = 0;
+		nbword++;
+		i++;
 	}
-	return (num_word);
+	while (s[i])
+	{
+		if (s[i - 1] == c && s[i] != c)
+			nbword++;
+		i++;
+	}
+	return (nbword);
 }
 
-static char	*ft_get_string(char const *s, char sep)
+static int	len_word(const char *s, char c)
 {
-	int		i;
-	int		size;
-	char	*to_split;
+	int	len;
 
-	i = -1;
-	size = 0;
-	while (s[++i] != sep && s[i])
-		size++;
-	to_split = malloc((size + 1) * sizeof(char));
-	if (!to_split)
+	len = 0;
+	while (s[len] != c && s[len])
+		len++;
+	return (len);
+}
+
+static char	*get_word(const char *s, char c, int *pos)
+{
+	char	*word;
+	int		i;
+
+	i = 0;
+	word = malloc((len_word(&s[*pos], c) + 1) * sizeof(char));
+	if (!word)
 		return (NULL);
-	i = -1;
-	while (s[++i] != sep && s[i])
-		to_split[i] = s[i];
-	to_split[i] = '\0';
-	return (to_split);
+	while (s[*pos] != c && s[*pos])
+	{
+		word[i] = s[*pos];
+		i++;
+		*pos = *pos + 1;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+char	**null_return(void)
+{
+	char	**splitted;
+
+	splitted = malloc(1 * sizeof(char *));
+	if (!splitted)
+		return (NULL);
+	splitted[0] = NULL;
+	return (splitted);
+	return (splitted);
 }
 
 /*Alloue (avec malloc(3)) et retourne un tableau
@@ -64,30 +84,46 @@ résultant du découpage. NULL si l’allocation
 échoue.
 
 #1. La chaine de caractères à découper.
-#2. Le caractère délimitant. */
+#2. Le caractère délimitant.*/
 char	**ft_split(char const *s, char c)
 {
+	char	**splitted;
+	int		nbword;
 	int		i;
 	int		j;
-	char	**to_split;
 
 	i = 0;
-	j = -1;
-	if (!s)
+	j = 0;
+	if (ft_strlen(s) == 0)
+		return (null_return());
+	nbword = nb_word(s, c);
+	splitted = malloc((nbword + 1) * sizeof(char *));
+	if (!splitted)
 		return (NULL);
-	to_split = malloc((ft_num_word(s, c) + 1) * sizeof(char *));
-	if (!to_split)
-		return (NULL);
-	while (s[i] == c)
-		i++;
-	while (s[i])
+	while (nbword-- > 0)
 	{
-		if (i == 0 && s[i] != c)
-			to_split[++j] = ft_get_string(&s[i], c);
-		else if (i > 0 && s[i - 1] == c && s[i] != c && s[i + 1] != '\0')
-			to_split[++j] = ft_get_string(&s[i], c);
-		i++;
+		while (s[i] == c)
+			i++;
+		splitted[j] = get_word(s, c, &i);
+		j++;
 	}
-	to_split[++j] = NULL;
-	return (to_split);
+	splitted[j] = NULL;
+	return (splitted);
 }
+
+/*
+int main(int ac, char **av)
+{
+	char **splittedarray;
+	int i;
+
+	i = -1;
+	if (ac == 3)
+	{
+
+		splittedarray = ft_split(av[1], av[2][0]);
+		while (splittedarray[++i])
+			printf("%s\n", splittedarray[i]);
+	}
+	return 0;
+}*/

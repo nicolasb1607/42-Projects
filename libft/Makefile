@@ -1,4 +1,4 @@
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 EXEC = libft.a
 SRCS = ./ft_atoi.c \
@@ -35,7 +35,7 @@ SRCS = ./ft_atoi.c \
 	./ft_putchar_fd.c \
 	./ft_putstr_fd.c \
 	./ft_putendl_fd.c \
-	./ft_putnbr_fd.c \
+	./ft_putnbr_fd.c
 
 
 BONUS = ./ft_lstnew.c \
@@ -45,7 +45,7 @@ BONUS = ./ft_lstnew.c \
 	./ft_lstadd_back.c \
 	./ft_lstdelone.c \
 	./ft_lstclear.c \
-	./ft_lstiter.c \
+	./ft_lstiter.c
 
 INCLUDES = ./
 OBJS_SRCS = ${SRCS:.c=.o}

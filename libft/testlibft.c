@@ -242,13 +242,16 @@ int main()
 
 	printf("------------------------------------------\n");
 
-	char *to_split = "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.";
-	char char_split = 'i';
+	char *to_split = "   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ";
+	char char_split = ' ';
 	char **splitted;
-
+	int exist = 0;
 	splitted = ft_split(to_split,char_split);
-	while (splitted)
-		printf("%s\n", *splitted++);
+	while (splitted[exist])
+	{
+		printf("%s\n", splitted[exist]);
+		exist++;
+	}
 
 /*
 	splitted = ft_split(to_split, 'z');
