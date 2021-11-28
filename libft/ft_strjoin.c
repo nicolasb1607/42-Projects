@@ -6,11 +6,12 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:47 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 13:27:43 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/28 18:06:18 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /* Alloue (avec malloc(3)) et retourne une nouvelle
 chaine, résultat de la concaténation de s1 et s2.
 

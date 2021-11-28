@@ -6,11 +6,12 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:43 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 12:29:11 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/28 18:04:42 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 /*
  The strdup() function returns a pointer to a new string which is a duplicate of
 the string s.  Memory for the new string is obtained with malloc(3), and can be 
