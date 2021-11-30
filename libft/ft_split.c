@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:59:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/28 17:53:06 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/29 15:46:18 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,9 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	if (ft_strlen(s) == 0)
+	if (!s)
+		return (NULL);
+	if (ft_strlen(s) == 0 || !s)
 		return (null_return());
 	nbword = nb_word(s, c);
 	splitted = malloc((nbword + 1) * sizeof(char *));

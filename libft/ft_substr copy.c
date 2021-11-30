@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_substr copy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:16 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/30 16:28:32 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:35:38 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_len_inf(void)
-{
-	char	*dest;
-
-	dest = malloc(sizeof(char) * 1);
-	if (!dest)
-		return (NULL);
-	dest[0] = '\0';
-	return (dest);
-}
 
 /* Alloue (avec malloc(3)) et retourne une chaine de
 caractères issue de la chaine ’s’.
@@ -38,25 +27,21 @@ chaine ’s’.
 #3. La taille maximale de la nouvelle chaine. */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
-	char	*dest;
+	char	*substr;
+	int		i;
+	int		sublen;		
 
-	i = 0;
+	i = 1;
 	if (!s)
 		return (NULL);
-	if (ft_strlen(&s[start]) < len)
-		len = ft_strlen(&s[start]);
-	if (ft_strlen(s) < start)
-		return (ft_len_inf());
-	dest = malloc(sizeof(char) * len + 1);
-	if (!dest)
-		return (NULL);
-	while (i < len && s[start])
+	while (++i <= start && s[i])
+		s++;
+	sublen = ft_strlen(s);
+	while ()
 	{
-		dest[i] = s[start];
-		start++;
-		i++;
+		/* code */
 	}
-	dest[i] = '\0';
-	return (dest);
+	
+	
+	return (substr);
 }

@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:29:40 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:39:48 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/29 09:59:29 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ de la liste.
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list	*last;
-
+	
+	if (!*alst)
+	{
+		*alst = new;
+		return ;
+	}
 	if (*alst != NULL && new != NULL)
 	{
 		last = ft_lstlast(*alst);

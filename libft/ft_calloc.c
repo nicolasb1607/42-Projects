@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:37:56 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 13:49:53 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/30 13:25:47 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@ successful call to calloc() with nmemb or size equal to zero.
 */
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int	*ptr;
+	char	*ptr;
 
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-	ptr = malloc(nmemb * sizeof(size));
+	ptr = malloc(nmemb * size);
 	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, nmemb);
+	ft_bzero(ptr, nmemb * size);
 	return (ptr);
 }

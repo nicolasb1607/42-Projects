@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:32 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/25 13:23:04 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/30 13:32:38 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	i = 1;
 	ptrdest = (char *)dest;
 	ptrsrc = (char *)src;
+	if (!dest && !src)
+		return (NULL);
 	if (is_higher_in_mem(dest, src) == 1)
 	{
 		while (i <= n)
@@ -43,12 +45,9 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	else if (is_higher_in_mem(dest, src) == 0)
 	{
-		i = 0;
-		while (i < n)
-		{
+		i = -1;
+		while (++i < n)
 			ptrdest[i] = ptrsrc[i];
-			i++;
-		}
 	}
 	return (ptrdest);
 }

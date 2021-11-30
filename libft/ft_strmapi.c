@@ -6,11 +6,22 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:49:20 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:47 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/30 14:10:14 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strcpy(char *dst, char *src)
+{
+	int	i;
+
+	i = -1;
+	while (src[++i])
+		dst[i] = src[i];
+	dst[i] = '\0';
+	return (dst);
+}
 
 /* Applique la fonction ’f’ à chaque caractère de la
 chaine de caractères passée en argument pour créer

@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:47 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/28 18:06:18 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/29 15:44:41 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = -1;
 	j = -1;
+	if (!s1 || !s2)
+		return (NULL);
 	catlen = ft_strlen(s1) + ft_strlen(s2);
 	strcat = malloc((catlen + 1) * sizeof(char));
 	if (!strcat)

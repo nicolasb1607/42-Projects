@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:54 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/26 15:02:37 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/11/30 12:51:25 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,18 +32,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	long unsigned int	i;
 
 	i = 0;
-	if (!dst || !src)
-		return (0);
 	if (size <= 0)
 		return (ft_strlen((char *) src));
-	while (i < size && src[i])
+	while (i < size - 1 && src[i])
 	{
 		dst[i] = src[i];
 		i++;
 	}
-	if ((int) size < ft_strlen(src))
-		dst [i - 1] = '\0';
-	else
-		dst[i] = '\0';
+	dst[i] = '\0';
 	return (ft_strlen((char *) src));
 }

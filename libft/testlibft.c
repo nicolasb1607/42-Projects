@@ -78,12 +78,14 @@ int main()
 
 	printf("------------------------------------------\n");
 	
-	printf("Test MEMCPY\n");
+	 /* printf("Test MEMCPY\n");
 	char *src = "helloyarars";
 	char dest1[8];
 	char dest2[8];
 	printf("memcpy  copy 6 : %s \n", (char *) memcpy(dest1, src, 6));
+	printf("memcpy  copy 6 : %s \n", (char *) memcpy(NULL, src, 6));
 	printf("ft_memcpy copy 6 : %s \n", (char *)memcpy(dest2, src, 6));
+	printf("ft_memcpy copy 6 : %s \n", (char *)memcpy(NULL, src, 6)); */
 
 
 	printf("------------------------------------------\n");
@@ -146,7 +148,7 @@ int main()
 
 	char *to_compare1 ="You got the same string";
 	char *to_compare2 = "You got the same charactere";
-	int nbcompare = 10;
+	int nbcompare = -1;
 
 	printf ("strncmp : %d \n", strncmp(to_compare1, to_compare2, nbcompare));
 	printf ("strncmp : %d \n", strncmp(to_compare1, to_compare2, 0));
