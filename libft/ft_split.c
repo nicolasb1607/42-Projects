@@ -6,72 +6,89 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:59:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/01 08:43:58 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:07:51 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	nb_word(const char *s, char c)
+static int	ft_wordcount(char const *s, char c)
 {
-	int	nbword;
+	int	i;
+	int	word;
+	int	count;
+
+	count = 0;
+	word = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			word = 0;
+		if (word == 0)
+		{
+			if (s[i] != c && word == 0)
+			{
+				word = 1;
+				count++;
+			}
+		}
+		i++;
+	}
+	return (count);
+}
+
+static int	ft_wordlen(char const *s, char c)
+{
 	int	i;
 
 	i = 0;
-	nbword = 0;
-	if (i == 0 && s[i] != c)
-	{
-		nbword++;
+	while (s[i] && s[i] != c)
 		i++;
-	}
-	while (s[i])
-	{
-		if (s[i - 1] == c && s[i] != c)
-			nbword++;
-		i++;
-	}
-	return (nbword);
+	return (i + 1);
 }
 
-static int	len_word(const char *s, char c)
+static char	**free_tab(char **tab)
 {
-	int	len;
-
-	len = 0;
-	while (s[len] != c && s[len])
-		len++;
-	return (len);
-}
-
-static char	*get_word(const char *s, char c, int *pos)
-{
-	char	*word;
-	int		i;
+	int	i;
 
 	i = 0;
-	word = malloc((len_word(&s[*pos], c) + 1) * sizeof(char));
-	if (!word)
-		return (NULL);
-	while (s[*pos] != c && s[*pos])
+	while (!tab[i])
 	{
-		word[i] = s[*pos];
+		free(tab[i]);
 		i++;
-		*pos = *pos + 1;
 	}
-	word[i] = '\0';
-	return (word);
+	free(tab);
+	return (NULL);
 }
 
-char	**null_return(void)
+static char	**ft_cut(char const *s, char **split, char c, int i)
 {
-	char	**splitted;
+	int		j;
+	int		l;
 
-	splitted = malloc(1 * sizeof(char *));
-	if (!splitted)
-		return (NULL);
-	splitted[0] = NULL;
-	return (splitted);
-	return (splitted);
+	j = -1;
+	while (++j < ft_wordcount(s, c))
+	{
+		l = 0;
+		while (s[i] == c && s[i])
+			i++;
+		if (s[i] != c)
+		{
+			split[j] = malloc(sizeof(char) * ft_wordlen(&s[i], c));
+			if (!split[j])
+				return (free_tab(split));
+			while (s[i] != c && s[i])
+			{
+				split[j][l] = s[i];
+				i++;
+				l++;
+			}
+			split[j][l] = '\0';
+		}
+	}
+	split[j] = 0;
+	return (split);
 }
 
 /*Alloue (avec malloc(3)) et retourne un tableau
@@ -87,28 +104,15 @@ résultant du découpage. NULL si l’allocation
 #2. Le caractère délimitant.*/
 char	**ft_split(char const *s, char c)
 {
-	char	**splitted;
-	int		nbword;
+	char	**split;
 	int		i;
-	int		j;
 
 	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
-	if (ft_strlen(s) == 0 || !s)
-		return (null_return());
-	nbword = nb_word(s, c);
-	splitted = malloc((nbword + 1) * sizeof(char *));
-	if (!splitted)
+	split = malloc(sizeof(char *) * (ft_wordcount(s, c) + 1));
+	if (!split)
 		return (NULL);
-	while (nbword-- > 0)
-	{
-		while (s[i] == c)
-			i++;
-		splitted[j] = get_word(s, c, &i);
-		j++;
-	}
-	splitted[j] = NULL;
-	return (splitted);
+	split = ft_cut(s, split, c, i);
+	return (split);
 }

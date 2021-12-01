@@ -6,22 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:39:16 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/30 16:28:32 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:09:17 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static char	*ft_len_inf(void)
-{
-	char	*dest;
-
-	dest = malloc(sizeof(char) * 1);
-	if (!dest)
-		return (NULL);
-	dest[0] = '\0';
-	return (dest);
-}
 
 /* Alloue (avec malloc(3)) et retourne une chaine de
 caractères issue de la chaine ’s’.
@@ -44,11 +33,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
+	if (ft_strlen(s) < start)
+		return ((char *)ft_calloc(sizeof(char), 1));
 	if (ft_strlen(&s[start]) < len)
 		len = ft_strlen(&s[start]);
-	if (ft_strlen(s) < start)
-		return (ft_len_inf());
-	dest = malloc(sizeof(char) * len + 1);
+	dest = malloc(sizeof(*s) * (len + 1));
 	if (!dest)
 		return (NULL);
 	while (i < len && s[start])
