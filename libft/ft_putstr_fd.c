@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 13:43:45 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/29 15:59:24 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:43:49 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,3 @@ void	ft_putstr_fd(char *s, int fd)
 	while (s[++i])
 		ft_putchar_fd(s[i], fd);
 }
-
-/*
-int main()
-{
-	char *s ="hello";
-	int fd = 1;
-
-	ft_putstr_fd(s, fd);
-	return 0; 
-} */

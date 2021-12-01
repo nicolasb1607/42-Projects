@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/27 16:59:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/29 15:46:18 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:43:58 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,20 +112,3 @@ char	**ft_split(char const *s, char c)
 	splitted[j] = NULL;
 	return (splitted);
 }
-
-/*
-int main(int ac, char **av)
-{
-	char **splittedarray;
-	int i;
-
-	i = -1;
-	if (ac == 3)
-	{
-
-		splittedarray = ft_split(av[1], av[2][0]);
-		while (splittedarray[++i])
-			printf("%s\n", splittedarray[i]);
-	}
-	return 0;
-}*/

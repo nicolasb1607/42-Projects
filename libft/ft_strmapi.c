@@ -6,13 +6,13 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 12:49:20 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/30 14:10:14 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:44:26 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, char *src)
+static char	*ft_strcpy(char *dst, char *src)
 {
 	int	i;
 

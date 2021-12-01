@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:36:15 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:40:05 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:48:51 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ contenu chaque élément.
 
 #1 L’adresse du pointeur vers un élément.
 #2. L’adresse de la fonction à appliquer.*/
-void ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	t_list *current;
+	t_list	*current;
 
 	while (lst != NULL)
 	{

@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:37:29 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/29 14:06:16 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:47:54 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ element si necessaire
 
 #1. L’adresse du pointeur vers un élément.
 #2. L’adresse de la fonction à appliquer.*/
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *head;
-	t_list *newnode;
+	t_list	*head;
+	t_list	*newnode;
 
 	head = NULL;
 	while (lst)

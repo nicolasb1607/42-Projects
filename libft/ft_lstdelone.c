@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:31:13 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/24 16:40:01 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:49:16 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ mémoire de next ne doit pas être free.
 #1. L’élement à free
 #2. L’adresse de la fonction permettant de
 supprimer le contenu de l’élement.*/
-void ft_lstdelone(t_list *lst, void (*del)(void*))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
 	if (lst != NULL && del != NULL)
 	{

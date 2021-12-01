@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 17:32:49 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/26 16:35:14 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/01 08:49:35 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ supprimer le contenu d’un élément.*/
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
 	t_list	*current;
-	
+
 	current = NULL;
 	while (*lst != NULL)
 	{
