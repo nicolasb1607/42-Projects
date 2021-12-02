@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:54:35 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/02 12:49:18 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/02 13:37:23 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,11 +80,7 @@ char    *get_next_line(int fd)
 
 	if(fd < 0)
 		return (NULL);
-	if (tabfdline[fd])
-	{
-		lineread = get_line(tabfdline[fd]);
-		return (lineread);
-	}
+
 	tabfdline[fd] = read_store(tabfdline[fd], fd);
 	lineread = get_line(tabfdline[fd]);
 	tabfdline[fd] = not_read_yet(lineread, tabfdline[fd]);
@@ -101,10 +97,11 @@ int main()
 	
 	fd = open("./lyrics.txt", O_RDONLY);
 
-	while (str[0] != 0)
+	do
 	{
 		str = get_next_line(fd);
 		printf("%s\n", str);
-	}
+	}while (str);
+	
 	return (0);
 }
