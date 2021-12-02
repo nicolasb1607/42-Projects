@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:38:39 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/11/30 13:35:11 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/02 15:13:38 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	pos;
+	int		i;
+	char	*s1;
 
-	pos = 0;
-	if (ft_isascii(c) == 0)
-		return ((char *) &s[pos]);
-	while (s[pos] != c && s[pos])
-		pos++;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
-	else
-		return (NULL);
+	i = 0;
+	s1 = (char *)s;
+	while (s[i])
+	{
+		if (s1[i] == (unsigned char) c)
+			return (&s1[i]);
+		i++;
+	}
+	if (s1[i] == (unsigned char) c)
+		return (&s1[i]);
+	return (NULL);
 }

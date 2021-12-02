@@ -6,7 +6,7 @@
 # include <stddef.h>
 
 # define BUFFER_SIZE 10
-# define EOF '\0'
+# define EOF -1
 char    *get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char *s1, char *s2);
