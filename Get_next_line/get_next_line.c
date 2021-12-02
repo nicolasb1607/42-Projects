@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:54:35 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/02 13:37:23 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/02 13:44:04 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,9 @@ static char *read_store(char *lineread, int fd)
 		return (NULL);
 	while (!ft_strchr(buf, '\n') && bytesread > 0)
 	{
-		bytesread = read(fd, buf, BUFFER_SIZE);      
+		bytesread = read(fd, buf, BUFFER_SIZE);
+		if (bytesread == -1)
+			return (NULL);
 		buf[BUFFER_SIZE] = '\0';
 		lineread = ft_strjoin(lineread, buf);
 	}
