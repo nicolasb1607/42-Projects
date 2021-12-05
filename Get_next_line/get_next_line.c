@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 18:54:35 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/03 20:55:17 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/05 10:39:55 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,15 @@ static char *get_line(char *tabfdline)
 	line = malloc((len + 2) * sizeof(char));
 	if (!line)
 		return (NULL);
-	while (tabfdline[i])
+	while (tabfdline[i] != '\n')
 	{
 		line[i] = tabfdline[i];
+		i++;
+	}
+	if (tabfdline[i] == '\n')
+	{
+		line[i]	= '\n';
+		i++;
 	}
 	line[i] = '\0';
 	printf("sortie du get_line : %s", line);

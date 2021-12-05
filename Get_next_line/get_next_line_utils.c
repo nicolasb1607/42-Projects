@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:49:44 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/03 20:56:19 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/05 10:40:13 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	i = 0;
+	if (!s)
+		return (NULL);
 	dup = malloc((len + 1) * sizeof(char));
 	if (!dup)
 		return (NULL);
