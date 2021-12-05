@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:49:44 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/02 11:28:21 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/03 20:56:19 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	int	len;
 
 	len = 0;
-	if (!s)
+	if (!s || s[0] == '\0')
 		return (0);	
 	while (s[len])
 		len++;
@@ -34,17 +34,20 @@ int	ft_isascii(int c)
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	pos;
+	int		i;
+	char	*s1;
 
-	pos = 0;
-	if (ft_isascii(c) == 0)
-		return ((char *) &s[pos]);
-	while (s[pos] != c && s[pos])
-		pos++;
-	if (s[pos] == c)
-		return ((char *) &s[pos]);
-	else
-		return (NULL);
+	i = 0;
+	s1 = (char *)s;
+	while (s[i])
+	{
+		if (s1[i] == (unsigned char) c)
+			return (&s1[i]);
+		i++;
+	}
+	if (s1[i] == (unsigned char) c)
+		return (&s1[i]);
+	return (NULL);
 }
 
 char	*ft_strjoin(char *s1, char *s2)
@@ -68,7 +71,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	while (s1[++i])
 		strcat[++j] = s1[i];
 	i = -1;
-	while (s2[++i] && s2 != NULL)
+	while (s2[++i])
 		strcat[++j] = s2[i];
 	strcat[++j] = '\0';
 	return (strcat);
