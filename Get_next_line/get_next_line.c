@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/15 18:54:35 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/05 10:39:55 by nburat-d         ###   ########.fr       */
+/*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
+/*   Updated: 2021/12/06 17:45:06 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,101 +14,119 @@
 
 #include <stdio.h>
 
-/*segfault*/
-static char *get_line(char *tabfdline)
+char *get_line(char *save, char *line)
 {
-	int len;
-	char *line;
 	int i;
+	char *tmp;
 
 	i = 0;
-	len = 0;
-	if (!tabfdline)
+	if (!save || ft_strlen())
 		return (NULL);
-	if (ft_strchr(tabfdline, '\n'))
-	{
-		while (tabfdline[len] != '\n')
-			len++;
-	}
+	if (!ft_strchr(save, '\n'))
+		while (save[i])
+			i++;
 	else
-		len = ft_strlen(tabfdline);
-	printf("valeur de len : %d\n", len);
-	line = malloc((len + 2) * sizeof(char));
+		while (save[i] != '\n')
+			i++;
+	line = malloc((i + 2) * sizeof(char));
 	if (!line)
 		return (NULL);
-	while (tabfdline[i] != '\n')
+	i = 0;
+	if (!ft_strchr(save, '\n'))
 	{
-		line[i] = tabfdline[i];
-		i++;
+		while (save[i])
+		{
+			line[i] = save[i];
+			i++;
+		}
 	}
-	if (tabfdline[i] == '\n')
+	else
 	{
-		line[i]	= '\n';
+		while (save[i] != '\n')
+		{
+			line[i] = save[i];
+			i++;
+		}
+	}
+	if (save[i] == '\n')
+	{
+		line[i] = '\n';
 		i++;
 	}
 	line[i] = '\0';
-	printf("sortie du get_line : %s", line);
 	return (line);
 }
 
-static char *not_read_yet(char *lineread, char *tabfdline)
+char *not_read_yet(char *save)
 {
-	int len;
+	char *tmp;
 	int i;
+	int j;
 
-	i = -1;
-	len = 0;
-	if (!tabfdline || !lineread)
+	i = 0;
+	j = 0;
+	if (ft_strlen(save) == 0)
+	{
+		free(save);
 		return (NULL);
-	while (lineread[len] != '\n' && lineread[len] != EOF)
-		len++;
-	while (++i <= len)
-		tabfdline++;
-	return (ft_strdup(tabfdline));
+	}
+	while (save[i] != '\n' && save[i])
+		i++;
+	tmp = malloc(sizeof(char) * (ft_strlen(save) - i + 1));
+	if (!tmp)
+		return (NULL);
+	i = i + 1;
+	while (save[i])
+	{
+		tmp[j] = save[i];
+		i++;
+		j++;
+	}
+	tmp[j] = '\0';
+	free(save);
+	save = tmp;
+	return (save);
 }
 
-static char *read_store(char *lineread, int fd)
+char *read_save(char *save, int fd)
 {
-	char *buf;
+	char buff[BUFFER_SIZE + 1];
 	int bytesread;
+	char *tmp;
 
+	if (!save)
+		save = ft_strdup("");
 	bytesread = 1;
-	buf = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buf)
-		return (NULL);
-	while (!ft_strchr(buf, '\n') && bytesread > 0)
+	while (!ft_strchr(buff, '\n'))
 	{
-		bytesread = read(fd, buf, BUFFER_SIZE);
-		printf("bytesread : %d\n", bytesread);
+		bytesread = read(fd, buff, BUFFER_SIZE);
+		if (bytesread == 0)
+			break;
 		if (bytesread == -1)
 			return (NULL);
-		buf[bytesread] = '\0';
-		lineread = ft_strjoin(lineread, buf);
+		buff[bytesread] = '\0';
+		tmp = ft_strjoin(save, buff);
+		free(save);
+		save = tmp;
 	}
-	printf("Sortie read_store : %s\n", lineread);
-	printf("len lineread read_store : %ld\n", ft_strlen(lineread));
-	return (lineread);
+	return (save);
 }
 
 char *get_next_line(int fd)
 {
-	static char *tabfdline[1024];
-	char *lineread;
+	static char *save[1024];
+	char *line;
 
-	if (fd < 0)
-		return (NULL);
-	if (tabfdline[fd] && ft_strchr(tabfdline[fd], '\n'))
+	if (ft_strchr(save[fd], '\n'))
 	{
-		printf("non null string\n");
-		lineread = get_line(tabfdline[fd]);
-		tabfdline[fd] = not_read_yet(lineread, tabfdline[fd]);
-		return (lineread);
+		line = get_line(save[fd], line);
+		save[fd] = not_read_yet(save[fd]);
+		return (line);
 	}
-	tabfdline[fd] = read_store(tabfdline[fd], fd);
-
-	lineread = get_line(tabfdline[fd]);
-	tabfdline[fd] = not_read_yet(lineread, tabfdline[fd]);
-	return (lineread);
+	save[fd] = read_save(save[fd], fd);
+	line = get_line(save[fd], line);
+	save[fd] = not_read_yet(save[fd]);
+	return (line);
 }
 
 #include <fcntl.h>
@@ -117,15 +135,18 @@ int main()
 {
 	int fd;
 	char *str;
-	int i;
-
-	i = 1;
+	int i = 1;
+	
 	fd = open("./lyrics.txt", O_RDONLY);
 	do
 	{
 		str = get_next_line(fd);
-		i++;
+		if (str)
+		{
+			printf("ligne %d : %s", i, str);
+			free(str);
+			i++;
+		}
 	} while (str);
-
 	return (0);
 }
