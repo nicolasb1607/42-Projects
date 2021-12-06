@@ -5,7 +5,7 @@
 # include <stdlib.h>
 # include <stddef.h>
 
-# define BUFFER_SIZE 14
+# define BUFFER_SIZE 1000000
 char    *get_next_line(int fd);
 void	ft_bzero(void *s, size_t n);
 size_t	ft_strlen(const char *s);
