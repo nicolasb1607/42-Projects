@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/06 17:45:06 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/06 17:56:23 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *get_line(char *save, char *line)
 	char *tmp;
 
 	i = 0;
-	if (!save || ft_strlen())
+	if (ft_strlen(save) == 0)
 		return (NULL);
 	if (!ft_strchr(save, '\n'))
 		while (save[i])
@@ -97,7 +97,7 @@ char *read_save(char *save, int fd)
 	if (!save)
 		save = ft_strdup("");
 	bytesread = 1;
-	while (!ft_strchr(buff, '\n'))
+	while (!ft_strchr(save, '\n') && bytesread > 0)
 	{
 		bytesread = read(fd, buff, BUFFER_SIZE);
 		if (bytesread == 0)
