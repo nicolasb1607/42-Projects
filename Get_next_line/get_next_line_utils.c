@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:49:44 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/06 14:40:32 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/07 12:34:08 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlen(const char *s)
 
 	len = 0;
 	if (!s || s[0] == '\0')
-		return (0);	
+		return (0);
 	while (s[len])
 		len++;
 	return (len);
@@ -41,7 +41,7 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	s1 = (char *)s;
 	if (!s)
-		return(NULL);
+		return (NULL);
 	while (s[i])
 	{
 		if (s1[i] == (unsigned char) c)
@@ -52,7 +52,7 @@ char	*ft_strchr(const char *s, int c)
 		return (&s1[i]);
 	return (NULL);
 }
-	
+
 char	*ft_strdup(const char *s)
 {
 	int		len;

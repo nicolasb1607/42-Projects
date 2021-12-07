@@ -6,18 +6,15 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/07 11:56:56 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/07 12:30:13 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-#include <stdio.h>
-
 char	*get_line(char *save, char *line)
 {
 	int		i;
-	char	*tmp;
 
 	i = 0;
 	if (ft_strlen(save) == 0)
@@ -69,10 +66,13 @@ char	*not_read_yet(char *save)
 
 char	*read_save(char *save, int fd)
 {
-	char	buff[BUFFER_SIZE + 1];
+	char	*buff;
 	int		bytesread;
 	char	*tmp;
 
+	buff = malloc (sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (NULL);
 	bytesread = 1;
 	while (!ft_strchr(save, '\n') && bytesread > 0)
 	{
@@ -86,6 +86,7 @@ char	*read_save(char *save, int fd)
 		free(save);
 		save = tmp;
 	}
+	free(buff);
 	return (save);
 }
 
@@ -94,6 +95,7 @@ char	*get_next_line(int fd)
 	static char	*save[1024];
 	char		*line;
 
+	line = NULL;
 	if (fd < 0 || fd > 1024 || !fd || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (!save[fd])
@@ -102,28 +104,4 @@ char	*get_next_line(int fd)
 	line = get_line(save[fd], line);
 	save[fd] = not_read_yet(save[fd]);
 	return (line);
-}
-
-
-#include <fcntl.h>
-
-int main()
-{
-	int fd;
-	char *str;
-	int i = 1;
-
-	fd = open("./lyrics.txt", O_RDONLY);
-	do
-	{
-		str = get_next_line(fd);
-		if (str)
-		{
-			printf("ligne %d : %s", i, str);
-			free(str);
-			i++;
-		}
-	} while (str);
-
-	return (0);
 }
