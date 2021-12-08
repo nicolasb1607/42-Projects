@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/07 16:54:25 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/08 10:10:53 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,25 +44,19 @@ char	*not_read_yet(char *save)
 
 	i = 0;
 	j = -1;
-	if(!save)
-		return (NULL);
 	if (ft_strlen(save) == 0)
-	{
 		free(save);
+	if (!save)
 		return (NULL);
-	}
 	while (save[i] != '\n' && save[i])
 		i++;
 	tmp = malloc(sizeof(char) * (ft_strlen(save) - i + 1));
 	if (!tmp)
 		return (NULL);
-	if(save[i] == '\n')
+	if (save[i] == '\n')
 		i++;
 	while (save[i])
-	{
-		tmp[++j] = save[i];
-		i++;
-	}
+		tmp[++j] = save[i++];
 	tmp[++j] = '\0';
 	free(save);
 	save = tmp;
@@ -71,13 +65,10 @@ char	*not_read_yet(char *save)
 
 char	*read_save(char *save, int fd)
 {
-	char	*buff;
+	char	buff[BUFFER_SIZE +1];
 	int		bytesread;
 	char	*tmp;
 
-	buff = malloc (sizeof(char) * (BUFFER_SIZE + 1));
-	if (!buff)
-		return (NULL);
 	bytesread = 1;
 	while (!ft_strchr(save, '\n') && bytesread > 0)
 	{
@@ -85,7 +76,6 @@ char	*read_save(char *save, int fd)
 		if (bytesread == -1)
 		{
 			free (save);
-			free(buff);
 			return (NULL);
 		}
 		if (bytesread == 0)
@@ -95,7 +85,6 @@ char	*read_save(char *save, int fd)
 		free(save);
 		save = tmp;
 	}
-	free(buff);
 	return (save);
 }
 
@@ -126,16 +115,10 @@ int main()
 	char *str;
 
 	fd = open("./text.txt", O_RDONLY);
-
 	do
 	{
 		str = get_next_line(fd);
 		printf("%s", str);
 		free(str);
 	} while (str);
-	
-		str = get_next_line(0);
-		printf("%s", str);
-		free(str);
-} 
-*/
+} */
