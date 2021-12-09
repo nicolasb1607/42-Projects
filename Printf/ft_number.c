@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:29:18 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/08 19:04:29 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 10:49:41 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,42 @@ void    ft_putnbru(unsigned int nbr, int *printed)
 	}
 	if (nbr <= 9)
 	{
+		nbr = nbr + '0';
 		write(1, &nbr, 1);
 		*printed = *printed + 1;
 	}
 	return ; 
 }
+
+void	ft_putnbr_hexa(int nbr, int *printed)
+{
+	char base[17] ="0123456789abcdef";
+
+	if (nbr > 15)
+	{
+		ft_putnbr_hexa(nbr / 16, printed);
+		nbr = nbr % 16;
+	}
+	if (nbr <= 15)
+		ft_putchar(base[nbr], printed);
+	return ; 
+}
+
+void	ft_putnbr_hexa_maj(int nbr, int *printed)
+{
+	char base[17] ="0123456789ABCDEF";
+
+	if (nbr > 15)
+	{
+		ft_putnbr_hexa_maj(nbr / 16, printed);
+		nbr = nbr % 16;
+	}
+	if (nbr <= 15)
+		ft_putchar(base[nbr], printed);
+	return ; 
+}
+
+
 
 
 

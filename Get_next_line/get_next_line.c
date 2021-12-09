@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/09 09:28:31 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 11:47:05 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,10 @@ char	*not_read_yet(char *save)
 	i = 0;
 	j = -1;
 	if (ft_strlen(save) == 0)
+	{
 		free(save);
-	if (!save)
 		return (NULL);
+	}
 	while (save[i] != '\n' && save[i])
 		i++;
 	tmp = malloc(sizeof(char) * (ft_strlen(save) - i + 1));
@@ -104,7 +105,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-/*
+
 #include <stdio.h>
 #include <fcntl.h>
 
@@ -121,4 +122,4 @@ int main()
 		printf("%s", str);
 		free(str);
 	} while (str);
-} */
+}

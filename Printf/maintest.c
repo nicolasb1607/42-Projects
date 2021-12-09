@@ -5,7 +5,8 @@ int main()
 {
     char c = 'z';
     char *str = "ala c bon";
-    int nbr = 16;
+    int nbr = 456;
+    unsigned int nbru = 16;
 
     printf("-----------TEST WITH NO ARG-------------\n");
 
@@ -27,7 +28,22 @@ int main()
     printf("%d\n", printf("Yolo %i\n", nbr));
     printf("%d\n", printf("Yolo %d\n", nbr));
     printf("%d\n", ft_printf("Yolo %d\n", nbr));
+    printf("%d\n", ft_printf("Yolo %i\n", nbr));
 
+    printf("-----------TEST %%U-------------\n");
 
+    printf("%d\n", printf("Yolo %u\n", nbru));
+    printf("%d\n", ft_printf("Yolo %u\n", nbru));
+
+    printf("-----------TEST %%x-------------\n");
+
+   // printf("%d\n", printf("%x\n", nbr));
+   // printf("%d\n", ft_printf("%x\n", nbr));
+
+    printf("-----------TEST %%X-------------\n");
+
+    printf("%d\n", ft_printf("%X\n", nbr));
+    printf("%d\n", printf("%X\n", nbr));
+    
     return 0;
 }
