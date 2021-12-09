@@ -1,25 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/15 15:49:44 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/07 16:33:37 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 09:24:39 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-
-void	ft_bzero(void *s, size_t n)
-{
-	unsigned char	*ptr;
-
-	ptr = s;
-	while (n-- > 0)
-		*ptr++ = 0;
-}
+#include "./get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {

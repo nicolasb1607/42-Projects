@@ -6,11 +6,11 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/08 10:10:53 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 09:28:44 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "./get_next_line_bonus.h"
 
 char	*get_line(char *save, char *line)
 {
