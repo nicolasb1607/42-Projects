@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:29:18 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/09 10:49:41 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 17:08:59 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void    ft_putnbr(int nbr, int *printed)
 	if (nbr == -2147483648)
 	{
 		write(1, "-2147483648", 11);
+		*printed = *printed + 11;
 		return ;
 	}
 	if (nbr < 0)
@@ -56,7 +57,7 @@ void    ft_putnbru(unsigned int nbr, int *printed)
 	return ; 
 }
 
-void	ft_putnbr_hexa(int nbr, int *printed)
+void	ft_putnbr_hexa(unsigned int nbr, int *printed)
 {
 	char base[17] ="0123456789abcdef";
 
@@ -70,7 +71,7 @@ void	ft_putnbr_hexa(int nbr, int *printed)
 	return ; 
 }
 
-void	ft_putnbr_hexa_maj(int nbr, int *printed)
+void	ft_putnbr_hexa_maj(unsigned int nbr, int *printed)
 {
 	char base[17] ="0123456789ABCDEF";
 
@@ -82,6 +83,26 @@ void	ft_putnbr_hexa_maj(int nbr, int *printed)
 	if (nbr <= 15)
 		ft_putchar(base[nbr], printed);
 	return ; 
+}
+
+void ft_pointer(unsigned long int pointer, int *printed, int *init)
+{
+	
+	char base[17] ="0123456789abcdef";
+	
+	if (*init == 0)
+	{
+		ft_putstr("0x", printed);
+		*init = 1;
+	}
+	if (pointer > 15)
+	{
+		ft_pointer(pointer / 16, printed, init);
+		pointer = pointer % 16;
+	}
+	if (pointer <= 15)
+		ft_putchar(base[pointer], printed);
+	return ;
 }
 
 

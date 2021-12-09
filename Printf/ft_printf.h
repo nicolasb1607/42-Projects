@@ -11,7 +11,9 @@ void	ft_putchar(char c, int *printed);
 void	ft_putstr(char *str, int *printed);
 void    ft_putnbr(int nbr, int *printed);
 void    ft_putnbru(unsigned int nbr, int *printed);
-void	ft_putnbr_hexa(int nbr, int *printed);
-void	ft_putnbr_hexa_maj(int nbr, int *printed);
+void	ft_putnbr_hexa(unsigned int nbr, int *printed);
+void	ft_putnbr_hexa_maj(unsigned int nbr, int *printed);
+void ft_pointer(unsigned long int pointer, int *printed, int *init);
+size_t	ft_strlen(const char *s);
 
 #endif

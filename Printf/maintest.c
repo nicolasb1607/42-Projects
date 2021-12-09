@@ -1,12 +1,16 @@
 #include "./ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int main()
 {
     char c = 'z';
     char *str = "ala c bon";
-    int nbr = 456;
-    unsigned int nbru = 16;
+    int nbr = -678826;
+    unsigned int nbru = -16573;
+    int nbr2 = 500;
+    char **nbrptr = &str;
+
 
     printf("-----------TEST WITH NO ARG-------------\n");
 
@@ -20,15 +24,15 @@ int main()
 
     printf("-----------TEST %%S-------------\n");
 
-    printf("%d\n", printf("Yolo %s\n", str));
-    printf("%d\n", ft_printf("Yolo %s\n", str));
+    printf("%d\n", printf(" NULL %s NULL ", NULL));
+    printf("%d\n", ft_printf(" NULL %s NULL ", NULL));
 
     printf("-----------TEST %%D-------------\n");
 
-    printf("%d\n", printf("Yolo %i\n", nbr));
-    printf("%d\n", printf("Yolo %d\n", nbr));
-    printf("%d\n", ft_printf("Yolo %d\n", nbr));
-    printf("%d\n", ft_printf("Yolo %i\n", nbr));
+    printf("%d\n", printf("Yolo %i\n", INT_MIN));
+    printf("%d\n", printf("Yolo %d\n", INT_MIN));
+    printf("%d\n", ft_printf("Yolo %d\n", INT_MIN));
+    printf("%d\n", ft_printf("Yolo %i\n", INT_MIN));
 
     printf("-----------TEST %%U-------------\n");
 
@@ -37,13 +41,21 @@ int main()
 
     printf("-----------TEST %%x-------------\n");
 
-   // printf("%d\n", printf("%x\n", nbr));
-   // printf("%d\n", ft_printf("%x\n", nbr));
+    printf("%d\n", printf("%x\n", nbr));
+    printf("%d\n", ft_printf("%x\n", nbr));
 
     printf("-----------TEST %%X-------------\n");
 
-    printf("%d\n", ft_printf("%X\n", nbr));
-    printf("%d\n", printf("%X\n", nbr));
-    
+    printf("%d\n", printf("%X et le deuxieme %x\n", nbr, nbr2));
+    printf("%d\n", ft_printf("%X et le deuxieme %x\n", nbr, nbr2 ));
+
+    printf("-----------TEST %%P-------------\n");
+
+    printf("%d\n", printf("%p  %p\n", LONG_MIN ,LONG_MAX));
+    printf("%d\n", ft_printf("%p  %p\n", LONG_MIN,LONG_MAX));
+
+    printf("-----------TEST A VIDE -------------\n");
+
+
     return 0;
 }

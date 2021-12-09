@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/05 17:15:52 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/09 11:46:55 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/09 13:46:18 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,26 +66,29 @@ char	*not_read_yet(char *save)
 
 char	*read_save(char *save, int fd)
 {
-	char	buff[BUFFER_SIZE +1];
+	char	*buff;
 	int		bytesread;
 	char	*tmp;
 
+	buff = malloc(sizeof(char) * (BUFFER_SIZE + 1));
+	if (!buff)
+		return (NULL);
 	bytesread = 1;
 	while (!ft_strchr(save, '\n') && bytesread > 0)
 	{
 		bytesread = read(fd, buff, BUFFER_SIZE);
-		if (bytesread == -1)
+		if (bytesread == -1 || (bytesread == 0 && !*save))
 		{
+			free(buff);
 			free (save);
 			return (NULL);
 		}
-		if (bytesread == 0)
-			break ;
 		buff[bytesread] = '\0';
 		tmp = ft_strjoin(save, buff);
 		free(save);
 		save = tmp;
 	}
+	free(buff);
 	return (save);
 }
 
@@ -105,6 +108,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
+/*
 #include <stdio.h>
 #include <fcntl.h>
 
@@ -121,4 +125,4 @@ int main()
 		printf("%s", str);
 		free(str);
 	} while (str);
-}
+} */
