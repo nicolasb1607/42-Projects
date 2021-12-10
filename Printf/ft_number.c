@@ -6,7 +6,7 @@
 /*   By: nburat-d <nburat-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/08 15:29:18 by nburat-d          #+#    #+#             */
-/*   Updated: 2021/12/10 13:48:10 by nburat-d         ###   ########.fr       */
+/*   Updated: 2021/12/10 15:03:06 by nburat-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void	ft_putnbru(unsigned int nbr, int *printed)
 
 void	ft_putnbr_hexa(unsigned int nbr, int *printed)
 {
-	char	base[17];
+	char	*base;
 
-	*base = "0123456789abcdef";
+	base = "0123456789abcdef";
 	if (nbr > 15)
 	{
 		ft_putnbr_hexa(nbr / 16, printed);
@@ -73,9 +73,9 @@ void	ft_putnbr_hexa(unsigned int nbr, int *printed)
 
 void	ft_putnbr_hexa_maj(unsigned int nbr, int *printed)
 {
-	char	base[17];
+	char	*base;
 
-	*base = "0123456789ABCDEF";
+	base = "0123456789ABCDEF";
 	if (nbr > 15)
 	{
 		ft_putnbr_hexa_maj(nbr / 16, printed);
@@ -88,9 +88,9 @@ void	ft_putnbr_hexa_maj(unsigned int nbr, int *printed)
 
 void	ft_pointer(unsigned long int pointer, int *printed, int *init)
 {
-	char	base[17];
+	char	*base;
 
-	*base = "0123456789abcdef";
+	base = "0123456789abcdef";
 	if (*init == 0)
 	{
 		ft_putstr("0x", printed);
